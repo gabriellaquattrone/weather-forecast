@@ -34,6 +34,7 @@ body {
     font-weight: normal;
     color: white;
     margin-top: 0%;
+    padding-right: 10%;
 }
 .time{
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -47,9 +48,12 @@ body {
     padding-left: 5%;
     padding-right: 5%;
     background-color: white;
+    border-right: thin solid black;
+
 }
 .pipe{
     border-right: thin solid black;
+    align-self: center;
 }
 .imglast{
     width: 100px;
