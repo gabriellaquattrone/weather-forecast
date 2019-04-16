@@ -15,7 +15,8 @@ function showImage() {
 // Make the actual CORS request.
 function makeCorsRequest() {
   input = document.getElementById('myInput');
-  let url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=${input},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+
+  let url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=${input.value},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
 
   let xhr = createCORSRequest('GET', url);
 
@@ -30,17 +31,46 @@ function makeCorsRequest() {
       let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
       console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
-      if (object.weather.main === "Clouds"){
-          var x = document.createElement("IMG");
-          x.setAttribute("src", "brokencloud.svg");
-          document.body.appendChild(x);
-      }
-      else if (object.weather.main === "Rain") {
+      console.log('Check');
+      if (object.list.weather.icon === "01d") {
+          console.log('Grabbed a clearsky.');
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/clearsky.svg");
+          document.getElementById('pick1').appendChild(x);
 
       }
-      else if (object.weather.main === "Clear") {
-
+      else if (object.list.weather.icon === "01n") {
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/clear-night.svg"); //change the source property images to point to one of the other svgs
+          document.getElementById('pick1').appendChild(x);
+          console.log('Grabbed a clear night.');
       }
+      else if (object.list.weather.icon === "02d") {
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/fewclouds-day.svg");
+          document.getElementById('pick1').appendChild(x);
+          console.log('Grabbed a fewclouds-day.');
+      }
+      else if (object.list.weather.icon === "02n") {
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/fewclouds-night.svg");
+          document.getElementById('pick1').appendChild(x);
+          console.log('Grabbed a fewclouds-night.');
+      }
+      else if (object.list.weather.icon === "03d" || object.weather.icon === "03n"){
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/brokencloud.svg");
+          document.getElementById('pick1').appendChild(x);
+          console.log('Grabbed a cloud.');
+      }
+      else if (object.list.weather.icon === "09n" || object.weather.icon === "09d") {
+          let x = document.createElement("IMG");
+          x.setAttribute("src", "assets/showerrain.svg");
+          document.getElementById('pick1').appendChild(x);
+          console.log('Grabbed a showerrain.');
+      }
+
+
   };
 
   xhr.onerror = function() {
@@ -67,6 +97,7 @@ function addToArray(newImage) {
 		count = count+1;
 		if (count >= 10) {
 			console.log("Got 10 doppler images");
+            //call function here to start animation
 		}
 	}
 }

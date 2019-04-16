@@ -17,7 +17,7 @@
                 <h2 class="northerncalifornia">Northern California with doppler radar</h2>
                 <div class="submitforecast">
                     <h3 class="forecastfor">Forecast for</h3>
-                        <input type="text" class="searchTerm" id="myInput" placeholder="Davis, CA">
+                        <input type="text" class="searchTerm" id="myInput" placeholder="Davis,CA">
                         <button type="submit" class="searchButton" onclick="makeCorsRequest()">submit</button>
                 </div>
             </div>
@@ -31,27 +31,32 @@
     <div class="dailyforecast">
         <div class= "image1">
             <h6 class= "time">1:00 pm</h6>
-            <img src="assets/brokencloud.svg" alt="">
+            <div id="pick1" class="pick">
+            </div>
             <p class ="number"> 67 </p>
-        </div> 
+        </div>
         <div class= "image1">
             <h6 class="time">2:00 pm</h6>
-            <img src="assets/brokencloud.svg" alt="">
+            <div id="pick2" class="pick">
+            </div>
             <p class = "number"> 67 </p>
         </div>
         <div class="image1">
             <h6 class="time">3:00 pm</h6>
-            <img src="assets/brokencloud.svg" alt="">
+            <div id="pick3" class="pick">
+            </div>
             <p class ="number"> 67 </p>
         </div>
         <div class="image1">
             <h6 class="time">4:00 pm</h6>
-            <img src="assets/brokencloud.svg" alt="">
+            <div id="pick4" class="pick">
+            </div>
             <p class = "number"> 67 </p>
         </div>
         <div class="imglast">
             <h6 class="time">5:00 pm</h6>
-            <img src="assets/brokencloud.svg" alt="">
+            <div id="pick5" class="pick">
+            </div>
             <p class  ="number"> 67 </p>
         </div>
     </div>
