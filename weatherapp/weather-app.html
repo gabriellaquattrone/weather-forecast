@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="weather-app.css">
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel="stylesheet">
+</head>
+<body>
+    <div class="localweatherbackground">
+        <div class="lefthalf">
+            <div class="upperpart">
+                <h1 class="sixhourforecast">Local Weather Six Hour Forecast</h1>
+                <h2 class="northerncalifornia">Northern California with doppler radar</h2>
+                <div class="submitforecast">
+                    <h3 class="forecastfor">Forecast for</h3>
+                        <input type="text" class="searchTerm" placeholder="Davis, CA">
+                        <button type="submit" class="searchButton" onclick="makeCorsRequest()">submit</button>
+                </div>
+            </div>
+            <div class="lowerpart">
+            </div>
+        </div>
+        <div class="righthalf">
+
+        </div>
+    </div>
+    <div class="dailyforecast">
+        <div class="img">
+            <h6 class="time">1:00 pm</h6>
+            <img src="assets/brokencloud.svg" alt="">
+        </div>
+        <div class="pipe"/>
+        <div class="img">
+            <h6 class="time">2:00 pm</h6>
+            <img src="assets/brokencloud.svg" alt="">
+        </div>
+        <div class="pipe"/>
+        <div class="img">
+            <h6 class="time">3:00 pm</h6>
+            <img src="assets/brokencloud.svg" alt="">
+        </div>
+        <div class="pipe"/>
+        <div class="img">
+            <h6 class="time">4:00 pm</h6>
+            <img src="assets/brokencloud.svg" alt="">
+        </div>
+        <div class="pipe"/>
+        <div class="img">
+            <h6 class="time">5:00 pm</h6>
+            <img src="assets/brokencloud.svg" alt="">
+        </div>
+    </div>
+</body>
+  <script src="weather-app.js"></script>
+</html>

@@ -1,0 +1,104 @@
+button {
+    border-radius: 0px;
+}
+html {
+    height: 100%;
+    width: 100%;
+}
+.localweatherbackground{
+    background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+    margin-top: 0%;
+    height: 100%;
+}
+.dailyforecast{
+    background-color: white;
+    filter: drop-shadow(0 -6mm 4mm #808080);
+    display: flex;
+    flex-direction: row;
+
+}
+.sixhourforecast{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 45pt;
+    font-weight: normal;
+    color: white;
+    margin-top: 0%;
+}
+.time{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: lighter;
+    font-size: 25pt;
+    color: black;
+
+}
+.pipe{
+    /* height: 45px; */
+    width: 1px; /* Line width */
+    background-color: black; /* Line color */
+    /* height: 100%; /* Override in-line if you want specific height. */ */
+    float: left; /* Causes the line to float to left of content. You can instead use position:absolute or display:inline-block if this fits better with your design */
+}
+.img{
+    width: 100px;
+    height: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.northerncalifornia{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 33pt;
+    font-weight: normal;
+    color: rgb(98, 59, 156);
+
+}
+.submitforecast{
+    display: flex;
+
+}
+.searchTerm{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: lighter;
+    width: 25%;
+    height: 35%;
+    margin-top: 3.5%;
+    color: white;
+    background-color: rgb(98, 59, 156);
+    border-color: transparent;
+}
+::placeholder {
+  color: white;
+  opacity: 1;
+  padding-left: 6%;
+}
+
+.searchButton{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: normal;
+    height: 35%;
+    margin-top: 3.5%;
+    margin-left: 1%;
+    border: 1px;
+    color: white;
+    background-color: rgb(73,138,220);
+
+}
+.forecastfor{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22pt;
+    font-weight: normal;
+    color: white;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+.lefthalf{
+
+}
+.righthalf{
+
+}
+.upperpart{
+
+}
+.lowerpart{
+
+}
