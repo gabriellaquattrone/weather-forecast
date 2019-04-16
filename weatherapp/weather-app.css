@@ -24,6 +24,8 @@ body {
     display: flex;
     flex-direction: row;
     height: 40vh;
+    justify-content: space-between;
+    align-items: center;
 
 }
 .sixhourforecast{
