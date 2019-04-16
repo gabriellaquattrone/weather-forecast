@@ -14,8 +14,8 @@ function showImage() {
 }
 // Make the actual CORS request.
 function makeCorsRequest() {
-
-   let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47"
+  input = document.getElementById('myInput');
+  let url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=${input},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
 
   let xhr = createCORSRequest('GET', url);
 
