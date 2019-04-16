@@ -112,8 +112,9 @@ body {
 }
 
 .number{
-    font-family: 'Saira Extra Condensed Light', sans-serif;
+    font-family: 'Saira Extra Condensed', sans-serif;
     font-size: 65pt;
+    font-weight: lighter;
 }
 .lefthalf{
 
