@@ -15,26 +15,24 @@ body {
 }
 .localweatherbackground{
     background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
-    margin-top: 0%;
+    
     height: 60vh;
 }
 .dailyforecast{
-    background-color: white;
-    filter: drop-shadow(2 3mm 4mm #808080);
+    
     display: flex;
     flex-direction: row;
-    height: 40vh;
+    height: 35vh;
     justify-content: space-between;
     align-items: center;
-
+    /* position: inherit; */
 }
 .sixhourforecast{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 45pt;
     font-weight: normal;
     color: white;
-    margin-top: 0%;
-    padding-right: 10%;
+    padding-right: 0%;
 }
 .time{
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -72,18 +70,23 @@ body {
 
 }
 .submitforecast{
-    display: flex;
+    display: inline;
+
 
 }
+
+
 .searchTerm{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: lighter;
-    width: 25%;
-    height: 35%;
-    margin-top: 3.5%;
+    width: 20%;
     color: white;
     background-color: rgb(98, 59, 156);
     border-color: transparent;
+    height: 3.5vh;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1%;
 }
 ::placeholder {
   color: white;
@@ -94,21 +97,21 @@ body {
 .searchButton{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: normal;
-    height: 35%;
-    margin-top: 3.5%;
-    margin-left: 1%;
-    border: 1px;
+    height: 3.5vh;
+    width: 7.5vw;
+    margin-left: 0.5%;
+    border: 19px;
     color: white;
     background-color: rgb(73,138,220);
-
+    display: inline-block;
+    vertical-align: middle;
+    width: 5vw;
 }
 .forecastfor{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 22pt;
     font-weight: normal;
     color: white;
-    padding-left: 10%;
-    padding-right: 5%;
 }
 
 .number{
@@ -117,8 +120,12 @@ body {
     font-weight: lighter;
 }
 .lefthalf{
+    padding-left: 5%;
+    padding-top: 3%;
+
 
 }
+
 .righthalf{
 
 }
@@ -128,3 +135,4 @@ body {
 .lowerpart{
 
 }
+
