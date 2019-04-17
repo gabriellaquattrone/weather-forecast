@@ -33,20 +33,45 @@ function makeCorsRequest() {
       console.log(JSON.parse(responseStr));
       //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
 
-      for (let i = 0; i < 5; i++){
-          updateHourlyForecast(object.list[i].weather[0].icon);
-          grabTimes(object.list[i].dt_txt);
+      for (let a = 0; a < 5; a++){
+          console.log("Loop"+a);
+          console.log(object.list[a].weather[0]);
+          updateHourlyForecast(object.list[a].weather[0].icon);
+          grabTimes(object.list[a].dt_txt);
       }
+      //console.log(document.getElementById("hour" + a));
+      // document.getElementById("hour" + i).innerHTML = newTimeString;
 
   };
   function grabTimes(timeObj){
           console.log(timeObj);
+          //2019-04-17 01:00:00
+          let time = `${timeObj[11]}${timeObj[12]}`;
+          console.log(time);
+          let newTime = -1;
+          if (time < 7) {
+              newTime = (time - 7) * -1;
+              console.log(`The new time is subtracted: ${newTime}`);
+          }
+          else {
+              newTime = time - 7;
+              console.log(`The new time is: ${newTime}`);
+          }
+           console.log("New Time:"+newTime);
+          if (newTime > 12){
+              console.log("Hi");
+              newTime = newTime - 12;
+              let newTimeString = newTime + ":00pm"
+              console.log("New time is:" + newTimeString);
+          }
+          else {
+              console.log("Else");
+              let newTimeString = newTime + ":00pm"
+              console.log("New time is:" + newTimeString);
+          }
           // subtract 7 hours for correct time zone
           // print to screen
-          for (let i = 1; i < 6; i++){
-              document.getElementById(`hour${i}`).appendChild(x);
-              //how to change text?
-          }
+
   }
   function updateHourlyForecast(weatherObj){
       if (weatherObj === "01d") {
