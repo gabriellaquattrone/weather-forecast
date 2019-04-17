@@ -30,48 +30,90 @@ function makeCorsRequest() {
   xhr.onload = function() {
       let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
-      console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
-      console.log('Check');
-      if (object.list.weather.icon === "01d") {
+      console.log(JSON.parse(responseStr));
+      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
+
+      for (let a = 0; a < 5; a++){
+          console.log("Loop"+a);
+          console.log(object.list[a].weather[0]);
+          updateHourlyForecast(object.list[a].weather[0].icon);
+          grabTimes(object.list[a].dt_txt);
+      }
+      //console.log(document.getElementById("hour" + a));
+      // document.getElementById("hour" + i).innerHTML = newTimeString;
+
+  };
+  function grabTimes(timeObj){
+          console.log(timeObj);
+          //2019-04-17 01:00:00
+          let time = `${timeObj[11]}${timeObj[12]}`;
+          console.log(time);
+          let newTime = -1;
+          if (time < 7) {
+              newTime = (time - 7) * -1;
+              console.log(`The new time is subtracted: ${newTime}`);
+          }
+          else {
+              newTime = time - 7;
+              console.log(`The new time is: ${newTime}`);
+          }
+           console.log("New Time:"+newTime);
+          if (newTime > 12){
+              console.log("Hi");
+              newTime = newTime - 12;
+              let newTimeString = newTime + ":00pm"
+              console.log("New time is:" + newTimeString);
+          }
+          else {
+              console.log("Else");
+              let newTimeString = newTime + ":00pm"
+              console.log("New time is:" + newTimeString);
+          }
+          // subtract 7 hours for correct time zone
+          // print to screen
+
+  }
+  function updateHourlyForecast(weatherObj){
+      if (weatherObj === "01d") {
           console.log('Grabbed a clearsky.');
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clearsky.svg");
           document.getElementById('pick1').appendChild(x);
 
       }
-      else if (object.list.weather.icon === "01n") {
+      else if (weatherObj === "01n") {
+          console.log('Grabbed a clear night.');
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clear-night.svg"); //change the source property images to point to one of the other svgs
           document.getElementById('pick1').appendChild(x);
-          console.log('Grabbed a clear night.');
+
       }
-      else if (object.list.weather.icon === "02d") {
+      else if (weatherObj === "02d") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-day.svg");
           document.getElementById('pick1').appendChild(x);
           console.log('Grabbed a fewclouds-day.');
       }
-      else if (object.list.weather.icon === "02n") {
+      else if (weatherObj === "02n") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-night.svg");
           document.getElementById('pick1').appendChild(x);
           console.log('Grabbed a fewclouds-night.');
       }
-      else if (object.list.weather.icon === "03d" || object.weather.icon === "03n"){
+      else if (weatherObj === "03d" || object.weather.icon === "03n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/brokencloud.svg");
           document.getElementById('pick1').appendChild(x);
           console.log('Grabbed a cloud.');
       }
-      else if (object.list.weather.icon === "09n" || object.weather.icon === "09d") {
+      else if (weatherObj === "09n" || object.weather.icon === "09d") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/showerrain.svg");
           document.getElementById('pick1').appendChild(x);
           console.log('Grabbed a showerrain.');
       }
 
-
-  };
+  }
 
   xhr.onerror = function() {
     alert('Woops, there was an error making the request.');
