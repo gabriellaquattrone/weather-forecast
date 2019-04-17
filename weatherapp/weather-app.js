@@ -30,14 +30,24 @@ function makeCorsRequest() {
   xhr.onload = function() {
       let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
-      //console.log(JSON.parse(responseStr));
-      console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
+      console.log(JSON.parse(responseStr));
+      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
 
-      for (let i = 0; i < 6; i++){
+      for (let i = 0; i < 5; i++){
           updateHourlyForecast(object.list[i].weather[0].icon);
+          grabTimes(object.list[i].dt_txt);
       }
-  };
 
+  };
+  function grabTimes(timeObj){
+          console.log(timeObj);
+          // subtract 7 hours for correct time zone
+          // print to screen
+          for (let i = 1; i < 6; i++){
+              document.getElementById(`hour${i}`).appendChild(x);
+              //how to change text?
+          }
+  }
   function updateHourlyForecast(weatherObj){
       if (weatherObj === "01d") {
           console.log('Grabbed a clearsky.');
