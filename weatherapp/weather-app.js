@@ -35,47 +35,50 @@ function makeCorsRequest() {
       //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
 
       for (let a = 0; a < 5; a++){
-          console.log("Loop"+a);
           console.log(object.list[a].weather[0]);
           updateHourlyForecast(object.list[a].weather[0].icon, a);
-          grabTimes(object.list[a].dt_txt);
+          let time = grabTimes(object.list[a].dt_txt);
+          document.getElementById("hour" + (a+1)).textContent = time;
       }
-      //console.log(document.getElementById("hour" + a));
-      // document.getElementById("hour" + i).innerHTML = newTimeString;
+
 
   };
   function grabTimes(timeObj){
-          console.log(timeObj);
-          //2019-04-17 01:00:00
+          // Time Example : 2019-04-17 01:00:00
           let time = `${timeObj[11]}${timeObj[12]}`;
-          console.log(time);
-          let newTime = -1;
-          if (time < 7) {
-              newTime = (time - 7) * -1;
-              console.log(`The new time is subtracted: ${newTime}`);
-          }
-          else {
-              newTime = time - 7;
-              console.log(`The new time is: ${newTime}`);
-          }
-           console.log("New Time:"+newTime);
-          if (newTime > 12){
-              console.log("Hi");
-              newTime = newTime - 12;
-              let newTimeString = newTime + ":00pm"
-              console.log("New time is:" + newTimeString);
-          }
-          else {
-              console.log("Else");
-              let newTimeString = newTime + ":00pm"
-              console.log("New time is:" + newTimeString);
-          }
-          // subtract 7 hours for correct time zone
-          // print to screen
+          console.log("Old Time: " + time);
 
+          let newTime = -1;
+          let newTimeString = "";
+          if (time < 7) {
+              newTime = Number(time) + 5; // subtracting the time zone and making it positive
+              newTimeString = newTime + ":00pm"
+              console.log("New Time: " + newTimeString);
+              return newTimeString;
+          }
+           // subtract 7 hours for correct time zone
+          else if (time === "07") {
+              newTime = 12;
+              newTimeString = newTime + ":00am"
+              console.log("New Time: " + newTimeString);
+              return newTimeString;
+          }
+          else if (time > 7 && time < 19){
+              newTime = time - 7;
+              newTimeString = newTime + ":00am"
+              console.log("New Time: " + newTimeString);
+              return newTimeString;
+          }
+          else {
+              newTime = time - 12;
+              newTimeString = newTime + ":00pm"
+              console.log("New Time: " + newTimeString);
+              return newTimeString;
+          }
   }
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick"+(a+1);
+
       if (weatherObj === "01d") {
           console.log('Grabbed a clearsky.');
           let x = document.createElement("IMG");
