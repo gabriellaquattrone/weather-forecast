@@ -48,7 +48,7 @@ body {
 .image1{
     /* padding-left: 5%; */
     /* padding-right: 5%; */
-    background-color: white;
+    /* background-color: white; */
     line-height: 12vh;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ body {
 
 .number{
     font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 65pt;
+    font-size: 70pt;
     font-weight: lighter;
 }
 .lefthalf{
