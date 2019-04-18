@@ -15,7 +15,7 @@ body {
 }
 .localweatherbackground{
     background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
-    
+
     height: 60vh;
 }
 .dailyforecast{
@@ -137,6 +137,29 @@ body {
 
 }
 .lowerpart{
-
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
 }
+.currentTime {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 35pt;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+}
+.picture {
+   padding-top: 3%;
+   padding-left: 8%;
+   padding-right: 1%;
 
+   width: 15%;
+}
+.currentTemp {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 85pt;
+    font-weight: lighter;
+    color: white;
+    padding-left: 5%;
+    padding-bottom: 10%;
+}
