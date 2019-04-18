@@ -27,6 +27,10 @@ body {
     vertical-align: center;
     /* position: inherit; */
 }
+.flexCol{
+    display: flex;
+    flex-direction: column;
+}
 .sixhourforecast{
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 45pt;
