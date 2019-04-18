@@ -38,6 +38,7 @@ function makeCorsRequest() {
           console.log(object.list[a].weather[0]);
           updateHourlyForecast(object.list[a].weather[0].icon, a);
           let time = grabTimes(object.list[a].dt_txt);
+          document.getElementById("temp" + (a+1)).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
           document.getElementById("hour" + (a+1)).textContent = time;
       }
 
@@ -50,35 +51,34 @@ function makeCorsRequest() {
           let newTime = -1;
           let newTimeString = "";
 
-          console.log("Old Time: " + oldTime);
+          // console.log("Old Time: " + oldTime);
 
           if (oldTimeNumber > 12) { // for example, 17
               newTime = oldTimeNumber - 12;
               newTime = newTime + 17;
-              console.log("IF New Time: " + newTime);
+              // console.log("IF New Time: " + newTime);
           }
           else {
               newTime = oldTimeNumber + 17; // 24 hours - 7 hours = 17 hours
-              console.log("New Time: " + newTime);
+              // console.log("New Time: " + newTime);
           }
-
           if (newTime > 12){
               newTime -= 12;
-              console.log("New Time After Subtraction: " + newTime);
+              // console.log("New Time After Subtraction: " + newTime);
               if (newTime < 12){
                   newTimeString = newTime + ":00am";
-                  console.log("New Time String: " + newTimeString);
+                  // console.log("New Time String: " + newTimeString);
                   return newTimeString;
               }
               else if (newTime === 12){
               newTimeString = newTime + ":00pm";
-              console.log("New Time String: " + newTimeString);
+              // console.log("New Time String: " + newTimeString);
               return newTimeString;
               }
               else {
               newTime -= 12;
               newTimeString = newTime + ":00pm";
-              console.log("New Time String: " + newTimeString);
+              // console.log("New Time String: " + newTimeString);
               return newTimeString;
             }
           }
@@ -87,7 +87,7 @@ function makeCorsRequest() {
           }
           else { // less than 12
               newTimeString = newTime + ":00am";
-              console.log("New Time String: " + newTime);
+              // console.log("New Time String: " + newTime);
               return newTimeString;
           }
   }
@@ -95,14 +95,14 @@ function makeCorsRequest() {
       let pickVariable = "pick"+(a+1);
 
       if (weatherObj === "01d") {
-          console.log('Grabbed a clearsky.');
+          // console.log('Grabbed a clearsky.');
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clearsky.svg");
           document.getElementById(pickVariable).appendChild(x);
 
       }
       else if (weatherObj === "01n") {
-          console.log('Grabbed a clear night.');
+          // console.log('Grabbed a clear night.');
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clear-night.svg"); //change the source property images to point to one of the other svgs
           document.getElementById(pickVariable).appendChild(x);
@@ -112,61 +112,61 @@ function makeCorsRequest() {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-day.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a fewclouds-day.');
+          // console.log('Grabbed a fewclouds-day.');
       }
       else if (weatherObj === "02n") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-night.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a fewclouds-night.');
+          // console.log('Grabbed a fewclouds-night.');
       }
       else if (weatherObj === "03d" || object.weather.icon === "03n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/scatteredclouds.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a scatteredclouds.');
+          // console.log('Grabbed a scatteredclouds.');
       }
       else if (weatherObj === "04d" || object.weather.icon === "04n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/brokencloud.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a brokencloud.');
+          // console.log('Grabbed a brokencloud.');
       }
       else if (weatherObj === "09n" || object.weather.icon === "09d") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/showerrain.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a showerrain.');
+          // console.log('Grabbed a showerrain.');
       }
       else if (weatherObj === "10d"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/rain-day.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a rain-day.');
+          // console.log('Grabbed a rain-day.');
       }
       else if (object.weather.icon === "10n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/rain-night.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a rain-night.');
+          // console.log('Grabbed a rain-night.');
       }
       else if (weatherObj === "11d" || object.weather.icon === "11n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/thunderstorms.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a thunderstorms.');
+          // console.log('Grabbed a thunderstorms.');
       }
       else if (weatherObj === "13d" || object.weather.icon === "13n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/snow.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a snow.');
+          // console.log('Grabbed a snow.');
       }
       else if (weatherObj === "50d" || object.weather.icon === "50n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/mist.svg");
           document.getElementById(pickVariable).appendChild(x);
-          console.log('Grabbed a mist.');
+          // console.log('Grabbed a mist.');
       }
 
   }
