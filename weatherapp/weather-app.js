@@ -45,34 +45,49 @@ function makeCorsRequest() {
   };
   function grabTimes(timeObj){
           // Time Example : 2019-04-17 01:00:00
-          let time = `${timeObj[11]}${timeObj[12]}`;
-          console.log("Old Time: " + time);
-
+          let oldTime = `${timeObj[11]}${timeObj[12]}`;
+          let oldTimeNumber = Number(oldTime);
           let newTime = -1;
           let newTimeString = "";
-          if (time < 7) {
-              newTime = Number(time) + 5; // subtracting the time zone and making it positive
-              newTimeString = newTime + ":00pm"
-              console.log("New Time: " + newTimeString);
-              return newTimeString;
-          }
-           // subtract 7 hours for correct time zone
-          else if (time === "07") {
-              newTime = 12;
-              newTimeString = newTime + ":00am"
-              console.log("New Time: " + newTimeString);
-              return newTimeString;
-          }
-          else if (time > 7 && time < 19){
-              newTime = time - 7;
-              newTimeString = newTime + ":00am"
-              console.log("New Time: " + newTimeString);
-              return newTimeString;
+
+          console.log("Old Time: " + oldTime);
+
+          if (oldTimeNumber > 12) { // for example, 17
+              newTime = oldTimeNumber - 12;
+              newTime = newTime + 17;
+              console.log("IF New Time: " + newTime);
           }
           else {
-              newTime = time - 12;
-              newTimeString = newTime + ":00pm"
-              console.log("New Time: " + newTimeString);
+              newTime = oldTimeNumber + 17; // 24 hours - 7 hours = 17 hours
+              console.log("New Time: " + newTime);
+          }
+
+          if (newTime > 12){
+              newTime -= 12;
+              console.log("New Time After Subtraction: " + newTime);
+              if (newTime < 12){
+                  newTimeString = newTime + ":00am";
+                  console.log("New Time String: " + newTimeString);
+                  return newTimeString;
+              }
+              else if (newTime === 12){
+              newTimeString = newTime + ":00pm";
+              console.log("New Time String: " + newTimeString);
+              return newTimeString;
+              }
+              else {
+              newTime -= 12;
+              newTimeString = newTime + ":00pm";
+              console.log("New Time String: " + newTimeString);
+              return newTimeString;
+            }
+          }
+          else if (newTime === 12) {
+              newTimeString = newTime + ":00am";
+          }
+          else { // less than 12
+              newTimeString = newTime + ":00am";
+              console.log("New Time String: " + newTime);
               return newTimeString;
           }
   }
