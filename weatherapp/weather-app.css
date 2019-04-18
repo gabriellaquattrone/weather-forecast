@@ -21,6 +21,7 @@ body {
 .dailyforecast{
     display: flex;
     flex-direction: row;
+    line-height: 6v;
     height: 40vh;
     justify-content: space-around;
     align-items: center;
@@ -41,7 +42,7 @@ body {
 .time{
     font-family: 'Saira Extra Condensed', sans-serif;
     font-weight: lighter;
-    font-size: 50%;
+    font-size: large;
     color: black;
     display: inline;
     vertical-align: center;
@@ -50,25 +51,28 @@ body {
     text-align: center;
 }
 .image1{
-    /* padding-left: 5%; */
-    /* padding-right: 5%; */
-    /* background-color: white; */
-    line-height: 12vh;
-    display: flex;
-    flex-direction: column;
-    /* border-right: thin solid black; */
+        /* padding-left: 5%; */
+        /* padding-right: 5%; */
+        /* background-color: white; */
+        line-height: 7vh;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        /*border-right: thin solid black; */
 }
 
-.pipe{
-    border-right: thin solid black;
-    align-self: center;
-}
+
 .imglast{
     /* padding-left: 5%; */
     /* padding-right: 5%; */
-    line-height: 12vh;
+    /* line-height: 12vh; */
     display: flex;
     flex-direction: column;
+    height: inherit;
+    justify-content: space-evenly;
+    vertical-align: center;
+    line-height: 7vh;
 }
 .northerncalifornia{
     font-family: 'IBM Plex Sans', sans-serif;
@@ -124,7 +128,7 @@ body {
 
 .number{
     font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 70pt;
+    font-size: 57pt;
     font-weight: lighter;
 }
 .lefthalf{
