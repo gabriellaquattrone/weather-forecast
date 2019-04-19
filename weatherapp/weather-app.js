@@ -126,19 +126,19 @@ function makeCorsRequest() {
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a fewclouds-night.');
       }
-      else if (weatherObj === "03d" || object.weather.icon === "03n"){
+      else if (weatherObj === "03d" || weatherObj === "03n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/scatteredclouds.svg");
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a scatteredclouds.');
       }
-      else if (weatherObj === "04d" || object.weather.icon === "04n"){
+      else if (weatherObj === "04d" || weatherObj === "04n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/brokencloud.svg");
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a brokencloud.');
       }
-      else if (weatherObj === "09n" || object.weather.icon === "09d") {
+      else if (weatherObj === "09n" || weatherObj === "09d") {
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/showerrain.svg");
           document.getElementById(pickVariable).appendChild(x);
@@ -156,19 +156,19 @@ function makeCorsRequest() {
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a rain-night.');
       }
-      else if (weatherObj === "11d" || object.weather.icon === "11n"){
+      else if (weatherObj === "11d" || weatherObj === "11n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/thunderstorms.svg");
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a thunderstorms.');
       }
-      else if (weatherObj === "13d" || object.weather.icon === "13n"){
+      else if (weatherObj === "13d" || weatherObj === "13n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/snow.svg");
           document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a snow.');
       }
-      else if (weatherObj === "50d" || object.weather.icon === "50n"){
+      else if (weatherObj === "50d" || weatherObj === "50n"){
           let x = document.createElement("IMG");
           x.setAttribute("src", "assets/mist.svg");
           document.getElementById(pickVariable).appendChild(x);
