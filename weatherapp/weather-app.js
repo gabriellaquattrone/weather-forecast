@@ -35,16 +35,18 @@ function makeCorsRequest() {
       //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
 
       for (let a = 0; a < 6; a++){
-          console.log(object.list[a].weather[0]);
+          console.log(`a at beginning: ${a}`);
+          // console.log(object.list[a].weather[0]);
           updateHourlyForecast(object.list[a].weather[0].icon, a);
           let time = grabTimes(object.list[a].dt_txt);
           document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
-          if (a = 0){
+          if (a === 0){
                document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}`;
           }
           else {
               document.getElementById("hour" + a).textContent = time;
           }
+          console.log(`a at end: ${a}`);
 
       }
 
@@ -99,7 +101,7 @@ function makeCorsRequest() {
   }
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick" + a;
-
+      document.getElementById(pickVariable).removeChild(document.getElementById("pictureNode" + a));
       if (weatherObj === "01d") {
           // console.log('Grabbed a clearsky.');
           let x = document.createElement("IMG");
