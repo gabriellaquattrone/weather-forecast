@@ -41,7 +41,8 @@ function makeCorsRequest() {
           let time = grabTimes(object.list[a].dt_txt);
           document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
           if (a === 0){
-               document.getElementById("hour" + a).textContent = `${time[0]}${time[4]}${time[5]}`.toUpperCase();
+              //fix this for cases like 7 pm and 10 pm (two versus one)
+               document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
           }
           else {
               document.getElementById("hour" + a).textContent = time;
@@ -57,25 +58,17 @@ function makeCorsRequest() {
          console.log(date);
 
          currentDate = date.toString();
-         currentTime = Number(`${currentDate[16]}${currentDate[17]}`)
+         currentTime = Number(`${currentDate[16]}${currentDate[17]}`);
+         console.log("Current Time: ", currentTime);
 
-         if (currentTime === 1){
-             return "12:00am";
-         }
-         else if (currentTime === 12){
-             return "11:00am";
+         if (currentTime === 0) {
+             return "12:00 am";
          }
          else if (currentTime < 12){
-             currentTime -= 1;
-             if (currentTime === 0){
-                 return "12:00pm";
-             }
-             else {
-                 return currentTime + ":00am";
-             }
+             return currentTime + ":00 am";
          }
-         else if (currentTime > 12){
-             return (currentTime - 13) + ":00pm";
+         else if (currentTime >= 12){
+             return (currentTime - 12) + ":00 pm";
          }
 
   }
