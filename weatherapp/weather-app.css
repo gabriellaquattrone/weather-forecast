@@ -136,8 +136,7 @@ body {
 .lefthalf{
     padding-left: 5%;
     padding-top: 3%;
-
-
+    width: 71vw;
 }
 
 .righthalf{
@@ -148,9 +147,10 @@ body {
 }
 .lowerpart{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     padding-top: 2%;
-    height: 87%;
+    width: 10vw;
+    height: 30vh;
 }
 .currentTime {
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -163,8 +163,7 @@ body {
    padding-top: 3%;
    padding-left: 8%;
    padding-right: 1%;
-
-   width: 15%;
+   width: 16%;
 }
 .currentTemp {
     font-family: 'Saira Extra Condensed', sans-serif;
