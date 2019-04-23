@@ -16,7 +16,6 @@ body {
     /*display: flex;
     flex-direction: column;*/
     /*overflow-x: hidden;*/
-
 }
 .pick{
     width: 8vw;
@@ -257,4 +256,7 @@ body {
     color: white;
     padding-bottom: 0%;
     height: inherit;
+}
+@media screen and (min-width:480px) and (max-width:780px) {
+    
 }

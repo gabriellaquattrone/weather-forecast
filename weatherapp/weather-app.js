@@ -176,6 +176,24 @@ function addToArray(newImage) {
 	}
 }
 
+/*let cities = document.getElementById("cities");
+cities.onload = changeImage();
+function changeImage(){
+    getTenImages();
+    wait(5000);
+    for (i = 0; i < 10; i++) {
+        radar[i].src = imageArray[i].src;
+        if (i === imageArray.length) {
+            i = 0;
+        }
+    }
+}
+
+// onclick
+function dopplerLoader() {
+	let timer = setInterval( changeImage, 150);
+	console.log("timer ",timer);
+}*/
 
 function tryToGetImage(dateObj) {
 	let dateStr = dateObj.getUTCFullYear();
@@ -196,11 +214,6 @@ function tryToGetImage(dateObj) {
 	}
 	newImage.src = "http://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
 }
-
-function changeImage() {
-    
-}
-
 
 function getTenImages() {
 	let dateObj = new Date();  // defaults to current date and time
