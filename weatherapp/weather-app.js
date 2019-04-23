@@ -183,17 +183,16 @@ function loadImg(){
 }
 function runDop(){
     // loop through array
-    for (i = 0; i < 10; i++) {
-        changeImage(i);
-        if (i === 9){
-            i = 0
-        }
-    }
+    let variable = setInterval(function(){
+        changeImage(0);
+    }, 80);
 }
 function changeImage(i){
-    //radar.src = imageArray[i];
-    //radar[i-1].src = "none";
-
+    radar.src = imageArray[i];
+    i++;
+    if (i === 9){
+        i = 0;
+    }
 }
 //
 function tryToGetImage(dateObj) {
@@ -226,4 +225,4 @@ function getTenImages() {
 
 }
 
-//loadImg();
+loadImg();
