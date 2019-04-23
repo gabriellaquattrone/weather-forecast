@@ -140,10 +140,6 @@ function makeCorsRequest(url) {
   xhr.send();
 }
 
-
-
-
-
 function whenClicked(){
     input = document.getElementById('myInput'); // ${input.value} put in the URL for searching
     let url = "";
