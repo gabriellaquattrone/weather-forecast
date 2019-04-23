@@ -172,10 +172,32 @@ body {
     width: 50%;
     padding-top: 5%;
 }
-.imgClip{
+.overlay{
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+.imgClip0{
     clip-path: circle(40%);
     width: 100%;
     overflow-x: hidden;
+    z-index: 1;
+    position: absolute;
+}
+.imgClip1{
+    clip-path: circle(40%);
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 2;
+    position: absolute;
+}
+.imgClip2{
+    clip-path: circle(40%);
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 3;
+    position: absolute;
 }
 .lowerpart{
     display: flex;

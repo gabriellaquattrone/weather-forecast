@@ -80,69 +80,53 @@ function makeCorsRequest(url) {
   }
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick" + a;
-
-      //document.getElementById(pickVariable).removeChild(document.getElementById("pictureNode" + a));
       let x = document.getElementById("pictureNode" + a);
       if (weatherObj === "01d") {
           // console.log('Grabbed a clearsky.');
           x.setAttribute("src", "assets/clearsky.svg");
-          //document.getElementById(pickVariable).appendChild(x);
-
       }
       else if (weatherObj === "01n") {
           // console.log('Grabbed a clear night.');
           x.setAttribute("src", "assets/clear-night.svg"); //change the source property images to point to one of the other svgs
-         // document.getElementById(pickVariable).appendChild(x);
-
       }
       else if (weatherObj === "02d") {
           x.setAttribute("src", "assets/fewclouds-day.svg");
-          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a fewclouds-day.');
       }
       else if (weatherObj === "02n") {
           x.setAttribute("src", "assets/fewclouds-night.svg");
-         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a fewclouds-night.');
       }
       else if (weatherObj === "03d" || weatherObj === "03n"){
           x.setAttribute("src", "assets/scatteredclouds.svg");
-         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a scatteredclouds.');
       }
       else if (weatherObj === "04d" || weatherObj === "04n"){
           x.setAttribute("src", "assets/brokencloud.svg");
-         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a brokencloud.');
       }
       else if (weatherObj === "09n" || weatherObj === "09d") {
           x.setAttribute("src", "assets/showerrain.svg");
-         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a showerrain.');
       }
       else if (weatherObj === "10d"){
           x.setAttribute("src", "assets/rain-day.svg");
-         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a rain-day.');
       }
       else if (object.weather.icon === "10n"){
           x.setAttribute("src", "assets/rain-night.svg");
-          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a rain-night.');
       }
       else if (weatherObj === "11d" || weatherObj === "11n"){
           x.setAttribute("src", "assets/thunderstorms.svg");
-          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a thunderstorms.');
       }
       else if (weatherObj === "13d" || weatherObj === "13n"){
           x.setAttribute("src", "assets/snow.svg");
-          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a snow.');
       }
       else if (weatherObj === "50d" || weatherObj === "50n"){
           x.setAttribute("src", "assets/mist.svg");
-          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a mist.');
       }
 
