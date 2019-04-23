@@ -184,19 +184,20 @@ body {
     overflow-x: hidden;
     z-index: 1;
     position: absolute;
+    filter: grayscale(100%);
 }
-.imgClip1{
-    clip-path: circle(40%);
-    width: 100%;
-    overflow-x: hidden;
-    z-index: 2;
-    position: absolute;
-}
-.imgClip2{
+.cities{
     clip-path: circle(40%);
     width: 100%;
     overflow-x: hidden;
     z-index: 3;
+    position: absolute;
+}
+.radar{
+    clip-path: circle(40%);
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 2;
     position: absolute;
 }
 .lowerpart{

@@ -197,6 +197,10 @@ function tryToGetImage(dateObj) {
 	newImage.src = "http://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
 }
 
+function changeImage() {
+    
+}
+
 
 function getTenImages() {
 	let dateObj = new Date();  // defaults to current date and time
