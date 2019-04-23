@@ -41,7 +41,8 @@ function makeCorsRequest() {
           let time = grabTimes(object.list[a].dt_txt);
           document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
           if (a === 0){
-               document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase();
+              //fix this for cases like 7 pm and 10 pm (two versus one)
+               document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
           }
           else {
               document.getElementById("hour" + a).textContent = time;

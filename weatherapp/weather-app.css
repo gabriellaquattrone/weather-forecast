@@ -17,6 +17,8 @@ body {
     background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
     height: 60vh;
     filter: drop-shadow(0px 20px 27px gray);
+    display: flex;
+    flex-direction: row;
 }
 .dailyforecast{
     display: flex;
@@ -85,8 +87,6 @@ body {
 }
 .submitforecast{
     display: inline;
-
-
 }
 
 
@@ -136,16 +136,18 @@ body {
 .lefthalf{
     padding-left: 5%;
     padding-top: 3%;
-
     width: 71vw;
-
     height: 50%;
-
-
 }
 
 .righthalf{
-
+    align-items: center;
+    width: 40%;
+}
+.imgClip{
+    clip-path: circle(40%);
+    width: 100%;
+    overflow-x: hidden;
 }
 .upperpart{
 
