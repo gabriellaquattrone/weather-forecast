@@ -15,8 +15,8 @@ body {
 }
 .localweatherbackground{
     background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
-
     height: 60vh;
+    filter: drop-shadow(0px 20px 27px gray);
 }
 .dailyforecast{
     display: flex;
@@ -31,10 +31,12 @@ body {
 .flexCol{
     display: flex;
     flex-direction: column;
+    size: 138%;
+    font-size: 175%;
 }
 .sixhourforecast{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 45pt;
+    font-size: 302%;
     font-weight: normal;
     color: white;
     padding-right: 0%;
@@ -76,7 +78,7 @@ body {
 }
 .northerncalifornia{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 33pt;
+    font-size: 200%;
     font-weight: normal;
     color: rgb(98, 59, 156);
 
@@ -121,7 +123,7 @@ body {
 }
 .forecastfor{
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 22pt;
+    font-size: 130%;
     font-weight: normal;
     color: white;
 }
@@ -148,6 +150,7 @@ body {
     display: flex;
     flex-direction: row;
     padding-top: 2%;
+    height: 87%;
 }
 .currentTime {
     font-family: 'Saira Extra Condensed', sans-serif;
