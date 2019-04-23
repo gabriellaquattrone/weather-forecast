@@ -35,69 +35,49 @@ function makeCorsRequest() {
       //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
 
       for (let a = 0; a < 6; a++){
-          console.log(`a at beginning: ${a}`);
           // console.log(object.list[a].weather[0]);
           updateHourlyForecast(object.list[a].weather[0].icon, a);
+          // console.log(object.list[a].weather[0].icon);
           let time = grabTimes(object.list[a].dt_txt);
           document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
           if (a === 0){
-               document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}`;
+               document.getElementById("hour" + a).textContent = `${time[0]}${time[4]}${time[5]}`.toUpperCase();
           }
           else {
               document.getElementById("hour" + a).textContent = time;
           }
-          console.log(`a at end: ${a}`);
-
       }
 
 
   };
   function grabTimes(timeObj){
           // Time Example : 2019-04-17 01:00:00
-          let oldTime = `${timeObj[11]}${timeObj[12]}`;
-          let oldTimeNumber = Number(oldTime);
-          let newTime = -1;
-          let newTimeString = "";
 
-          // console.log("Old Time: " + oldTime);
+         let date = new Date(timeObj + " UTC");
+         console.log(date);
 
-          if (oldTimeNumber > 12) { // for example, 17
-              newTime = oldTimeNumber - 12;
-              newTime = newTime + 17;
-              // console.log("IF New Time: " + newTime);
-          }
-          else {
-              newTime = oldTimeNumber + 17; // 24 hours - 7 hours = 17 hours
-              // console.log("New Time: " + newTime);
-          }
-          if (newTime > 12){
-              newTime -= 12;
-              // console.log("New Time After Subtraction: " + newTime);
-              if (newTime < 12){
-                  newTimeString = newTime + ":00am";
-                  // console.log("New Time String: " + newTimeString);
-                  return newTimeString;
-              }
-              else if (newTime === 12){
-              newTimeString = newTime + ":00pm";
-              // console.log("New Time String: " + newTimeString);
-              return newTimeString;
-              }
-              else {
-              newTime -= 12;
-              newTimeString = newTime + ":00pm";
-              // console.log("New Time String: " + newTimeString);
-              return newTimeString;
-            }
-          }
-          else if (newTime === 12) {
-              newTimeString = newTime + ":00am";
-          }
-          else { // less than 12
-              newTimeString = newTime + ":00am";
-              // console.log("New Time String: " + newTime);
-              return newTimeString;
-          }
+         currentDate = date.toString();
+         currentTime = Number(`${currentDate[16]}${currentDate[17]}`)
+
+         if (currentTime === 1){
+             return "12:00am";
+         }
+         else if (currentTime === 12){
+             return "11:00am";
+         }
+         else if (currentTime < 12){
+             currentTime -= 1;
+             if (currentTime === 0){
+                 return "12:00pm";
+             }
+             else {
+                 return currentTime + ":00am";
+             }
+         }
+         else if (currentTime > 12){
+             return (currentTime - 13) + ":00pm";
+         }
+
   }
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick" + a;
