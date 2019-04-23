@@ -173,11 +173,12 @@ function addToArray(newImage) {
 }
 ///DOPPLER LOADER CODE
 cities = document.getElementById("cities");
-cities.onload = function(){loadImg()};
+// cities.onload = function(){loadImg()};
 radar = document.getElementById("radar");
 function loadImg(){
     getTenImages();
-    setTimeout(function(){},5000);
+    setTimeout(function(){},1000);
+    runDop();
     //wait in the function
 }
 function runDop(){
@@ -190,7 +191,9 @@ function runDop(){
     }
 }
 function changeImage(i){
-    radar[i].src = imageArray[i];
+    //radar.src = imageArray[i];
+    //radar[i-1].src = "none";
+
 }
 //
 function tryToGetImage(dateObj) {
@@ -223,4 +226,4 @@ function getTenImages() {
 
 }
 
-getTenImages();
+//loadImg();
