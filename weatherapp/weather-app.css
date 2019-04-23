@@ -134,7 +134,7 @@ body {
 .lefthalf{
     padding-left: 5%;
     padding-top: 3%;
-
+    height: 50%;
 
 }
 
@@ -160,8 +160,9 @@ body {
    padding-top: 3%;
    padding-left: 8%;
    padding-right: 1%;
-
+   padding-bottom: 0%;
    width: 15%;
+   height: 25%;
 }
 .currentTemp {
     font-family: 'Saira Extra Condensed', sans-serif;
