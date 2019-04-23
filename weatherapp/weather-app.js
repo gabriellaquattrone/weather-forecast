@@ -175,26 +175,28 @@ function addToArray(newImage) {
 		}
 	}
 }
-
-/*let cities = document.getElementById("cities");
-cities.onload = changeImage();
-function changeImage(){
+///DOPPLER LOADER CODE
+cities = document.getElementById("cities");
+cities.onload = function(){loadImg()};
+radar = document.getElementById("radar");
+function loadImg(){
     getTenImages();
-    wait(5000);
+    setTimeout(function(){},5000);
+    //wait in the function
+}
+function runDop(){
+    // loop through array
     for (i = 0; i < 10; i++) {
-        radar[i].src = imageArray[i].src;
-        if (i === imageArray.length) {
-            i = 0;
+        changeImage(i);
+        if (i === 9){
+            i = 0
         }
     }
 }
-
-// onclick
-function dopplerLoader() {
-	let timer = setInterval( changeImage, 150);
-	console.log("timer ",timer);
-}*/
-
+function changeImage(i){
+    radar[i].src = imageArray[i];
+}
+//
 function tryToGetImage(dateObj) {
 	let dateStr = dateObj.getUTCFullYear();
 	dateStr += String(dateObj.getUTCMonth() + 1).padStart(2, '0'); //January is 0!
