@@ -152,9 +152,9 @@ body {
 }
 .lowerpart{
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     padding-top: 2%;
-    width: 10vw;
+    width: 50vw;
     height: 30vh;
 }
 .currentTime {
@@ -168,11 +168,8 @@ body {
    padding-top: 3%;
    padding-left: 8%;
    padding-right: 1%;
-
-   width: 16%;
-
+   width: 50%;
    padding-bottom: 0%;
-   width: 15%;
    height: 25%;
 
 }
