@@ -175,25 +175,7 @@ function addToArray(newImage) {
 cities = document.getElementById("cities");
 // cities.onload = function(){loadImg()};
 radar = document.getElementById("radar");
-function loadImg(){
-    getTenImages();
-    setTimeout(function(){},1000);
-    runDop();
-    //wait in the function
-}
-function runDop(){
-    // loop through array
-    let variable = setInterval(function(){
-        changeImage(0);
-    }, 80);
-}
-function changeImage(i){
-    radar.src = imageArray[i];
-    i++;
-    if (i === 9){
-        i = 0;
-    }
-}
+
 //
 function tryToGetImage(dateObj) {
 	let dateStr = dateObj.getUTCFullYear();
@@ -224,5 +206,38 @@ function getTenImages() {
 	}
 
 }
+
+function loadImg(){
+    getTenImages();
+    //setTimeout(function(),1000);
+    //runDop();
+    function print_src() {
+        for (i = 0; i < 10; i++) {
+            console.log(imageArray[i].src);
+        }
+    }
+    setTimeout(print_src, 5000);
+    // setTimeout(runDop, 5000);
+    //wait in the function
+}
+// let i = 0;
+// function runDop(){
+//     // loop through array
+//     let variable = setInterval(function(){
+//         changeImage();
+//         i++;
+//
+//         if(i >= 10) {
+//             i = 0;
+//         }
+//     }, 80);
+// }
+// function changeImage(i){
+//     radar.src = imageArray[i].src;
+//     //i++;
+//     //if (i === 9){
+//     //    i = 0;
+//     //}
+// }
 
 loadImg();
