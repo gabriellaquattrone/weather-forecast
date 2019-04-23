@@ -14,10 +14,7 @@ function showImage() {
 
 }
 // Make the actual CORS request.
-function makeCorsRequest() {
-  input = document.getElementById('myInput'); // ${input.value} put in the URL for searching
-
-  let url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+function makeCorsRequest(url) {
 
   let xhr = createCORSRequest('GET', url);
 
@@ -48,7 +45,7 @@ function makeCorsRequest() {
                }
                else {
                     document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
-               }      
+               }
           }
           else {
               document.getElementById("hour" + a).textContent = time;
@@ -83,79 +80,69 @@ function makeCorsRequest() {
   }
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick" + a;
-      document.getElementById(pickVariable).removeChild(document.getElementById("pictureNode" + a));
+
+      //document.getElementById(pickVariable).removeChild(document.getElementById("pictureNode" + a));
+      let x = document.getElementById("pictureNode" + a);
       if (weatherObj === "01d") {
           // console.log('Grabbed a clearsky.');
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clearsky.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
 
       }
       else if (weatherObj === "01n") {
           // console.log('Grabbed a clear night.');
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/clear-night.svg"); //change the source property images to point to one of the other svgs
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
 
       }
       else if (weatherObj === "02d") {
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-day.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a fewclouds-day.');
       }
       else if (weatherObj === "02n") {
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/fewclouds-night.svg");
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a fewclouds-night.');
       }
       else if (weatherObj === "03d" || weatherObj === "03n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/scatteredclouds.svg");
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a scatteredclouds.');
       }
       else if (weatherObj === "04d" || weatherObj === "04n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/brokencloud.svg");
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a brokencloud.');
       }
       else if (weatherObj === "09n" || weatherObj === "09d") {
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/showerrain.svg");
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a showerrain.');
       }
       else if (weatherObj === "10d"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/rain-day.svg");
-          document.getElementById(pickVariable).appendChild(x);
+         // document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a rain-day.');
       }
       else if (object.weather.icon === "10n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/rain-night.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a rain-night.');
       }
       else if (weatherObj === "11d" || weatherObj === "11n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/thunderstorms.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a thunderstorms.');
       }
       else if (weatherObj === "13d" || weatherObj === "13n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/snow.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a snow.');
       }
       else if (weatherObj === "50d" || weatherObj === "50n"){
-          let x = document.createElement("IMG");
           x.setAttribute("src", "assets/mist.svg");
-          document.getElementById(pickVariable).appendChild(x);
+          //document.getElementById(pickVariable).appendChild(x);
           // console.log('Grabbed a mist.');
       }
 
@@ -169,8 +156,23 @@ function makeCorsRequest() {
   xhr.send();
 }
 
-// run this code to make request when this script file gets executed
-makeCorsRequest();
+
+
+
+
+function whenClicked(){
+    input = document.getElementById('myInput'); // ${input.value} put in the URL for searching
+    let url = "";
+    if (input.value) {
+        url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=${input.value},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+    }
+    else {
+        url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+    }
+    // run this code to make request when this script file gets executed
+    makeCorsRequest(url);
+}
+whenClicked();
 
 ////DOPPLER IMAGES Code
 let imageArray = []  // global variable to hold stack of images for animation
