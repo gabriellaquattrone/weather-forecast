@@ -66,9 +66,13 @@ function makeCorsRequest() {
              return "11:00am";
          }
          else if (currentTime < 12){
+             console.log("Current Time: " + currentTime);
              currentTime -= 1;
              if (currentTime === 0){
                  return "12:00pm";
+             }
+             else if (currentTime === -1){
+                 return "11:00pm";
              }
              else {
                  return currentTime + ":00am";
