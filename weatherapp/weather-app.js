@@ -42,7 +42,13 @@ function makeCorsRequest() {
           document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
           if (a === 0){
               //fix this for cases like 7 pm and 10 pm (two versus one)
-               document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
+               let clockTime = `${time[0]}${time[1]}`;
+               if (time[1]===":"){
+                   document.getElementById("hour" + a).textContent = `${time[0]}${time[4]}${time[5]}`.toUpperCase(); // 7:00pm
+               }
+               else {
+                    document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
+               }      
           }
           else {
               document.getElementById("hour" + a).textContent = time;
@@ -66,6 +72,9 @@ function makeCorsRequest() {
          }
          else if (currentTime < 12){
              return currentTime + ":00 am";
+         }
+         else if (currentTime === 12) {
+             return "12:00 pm";
          }
          else if (currentTime >= 12){
              return (currentTime - 12) + ":00 pm";
