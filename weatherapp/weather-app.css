@@ -16,7 +16,6 @@ body {
     /*display: flex;
     flex-direction: column;*/
     /*overflow-x: hidden;*/
-
 }
 .pick{
     width: 8vw;
@@ -107,9 +106,8 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 200%;
     font-weight: normal;
-    color: rgb(98, 59, 156);
-    padding-top: 3%;
-    padding-bottom: 3%;
+    color: rgb(46, 49, 146);
+
 }
 .submitforecast{
     display: inline;
@@ -121,7 +119,7 @@ body {
     font-weight: lighter;
     width: 28%;
     color: white;
-    background-color: rgb(98, 59, 156);
+    background-color: rgb(46, 49, 146);
     border-color: transparent;
     height: 3.5vh;
     display: inline-block;
@@ -142,7 +140,7 @@ body {
     margin-left: 0.5%;
     border: 19px;
     color: white;
-    background-color: rgb(73,138,220);
+    background-color: rgb(127,136,203);
     display: inline-block;
     vertical-align: middle;
     width: 5vw;
@@ -217,7 +215,7 @@ body {
     /*padding-top: 2%;
     width: 50vw;
     height: 30vh; */
-    overflow-x: hidden;
+
 }
 .currentTime {
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -226,10 +224,6 @@ body {
     color: white;
     margin-left: 31%;
     text-align: center;
-}
-.changepic{
-    max-height: 23vh;
-    overflow-x: hidden;
 }
 .picture {
    /* padding-top: 3%; */
@@ -265,9 +259,6 @@ body {
     padding-bottom: 0%;
     height: inherit;
 }
-
-
-
 @media screen and (min-width:480px) and (max-width:780px) {
     *{
         margin: 0;
@@ -360,4 +351,3 @@ body {
         margin: 0%;
     }
 }
-
