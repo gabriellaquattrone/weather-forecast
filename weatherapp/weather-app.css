@@ -43,7 +43,7 @@ body {
 .flexCol{
     display: flex;
     flex-direction: column;
-    size: 138%;
+    /*size: 138%;*/
     height: inherit;
     font-size: 10%;
 }
@@ -351,3 +351,24 @@ body {
         margin: 0%;
     }
 }
+
+    @media screen and (max-width:480px) {
+    .localweatherbackground{
+        /*background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));*/
+        max-height: 100vh;
+        background-color: red;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dailyforecast{
+        display: none;
+
+
+    }
+    /*flex-wrap: wrap;*/
+
+
+}
+
