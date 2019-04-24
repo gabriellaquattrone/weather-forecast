@@ -41,7 +41,7 @@ function makeCorsRequest(url) {
               //fix this for cases like 7 pm and 10 pm (two versus one)
                let clockTime = `${time[0]}${time[1]}`;
                if (time[1]===":"){
-                   document.getElementById("hour" + a).textContent = `${time[0]}${time[4]}${time[5]}`.toUpperCase(); // 7:00pm
+                   document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase(); // 7:00pm
                }
                else {
                     document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();

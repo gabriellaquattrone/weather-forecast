@@ -258,26 +258,41 @@ body {
     height: inherit;
 }
 @media screen and (min-width:480px) and (max-width:780px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
     .localweatherbackground{
         height: 40vh;
-        display: flex;
-        flex-direction: column;
+
     }
     .lefthalf{
         padding-left: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+    .righthalf{
+        padding-top: 22%;
+        width: 40vw;
+    }
+    .lowerpart{
+        display: flex;
+        flex-direction: row;
+        width: 75vw;
     }
     .northerncalifornia{
         font-size: 100%;
         text-align: center;
     }
-    .sixhourforecast{
-        font-size: 150%;
-        padding-top: 10%;
-        text-align: center;
+    .overlay{
+        width: 40vw;
     }
     .forecastfor{
         font-size: 100%;
         text-align: center;
+    }
+    .flexCol{
+        height: 20vh;
     }
     .searchTerm{
         height: 1.6vh;
@@ -289,10 +304,21 @@ body {
         font-weight: 400;
 
     }
+    .sixhourforecast{
+        font-size: 150%;
+        padding: 0%;
+        text-align: center;
+    }
     .submitforecast{
 
     }
     .upperpart{
-        
+        padding-top: 10%;
+    }
+    .image1{
+        margin: 0%;
+    }
+    .imglast{
+        margin: 0%;
     }
 }
