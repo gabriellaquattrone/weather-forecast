@@ -267,3 +267,90 @@ body {
 }
 
 
+
+@media screen and (min-width:480px) and (max-width:780px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .currentTemp{
+        padding-top: 23%;
+        padding-right: 80%;
+    }
+    .currentTime{
+        border-right: solid 1px black;
+        border-spacing: inherit;
+        margin: 0%;
+    }
+    .forecastfor{
+        font-size: 100%;
+        text-align: center;
+    }
+    .flexCol{
+        height: 20vh;
+        padding-top: 25%;
+    }
+    .localweatherbackground{
+        height: 40vh;
+
+    }
+    .lefthalf{
+        padding-left: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+    .righthalf{
+        padding-top: 22%;
+        width: 40vw;
+    }
+    .lowerpart{
+        display: flex;
+        flex-direction: row;
+        width: 75vw;
+    }
+    .northerncalifornia{
+        font-size: 125%;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+    .overlay{
+        width: 40vw;
+        justify-content: center;
+    }
+    .picture{
+        padding-bottom: 16%;
+        width: 20vw;
+        position: fixed;
+    }
+
+    .searchTerm{
+        height: 1.6vh;
+        width: 35%;
+    }
+    .searchButton{
+        height: 2vh;
+        width: 8.5vw;
+        font-weight: 400;
+
+    }
+    .sixhourforecast{
+        font-size: 180%;
+        padding-bottom: 3%;
+        text-align: center;
+    }
+    .submitforecast{
+
+    }
+    .upperpart{
+        padding-top: 10%;
+        padding-left: 15%;
+        width: 60vw;
+    }
+    .image1{
+        margin: 0%;
+    }
+    .imglast{
+        margin: 0%;
+    }
+}
+
