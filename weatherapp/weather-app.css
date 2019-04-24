@@ -266,14 +266,4 @@ body {
     height: inherit;
 }
 
-@media screen and (max-width:480px) {
-    .localweatherbackground{
-    background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
-    max-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    /*flex-wrap: wrap;*/
-}
-
-}
