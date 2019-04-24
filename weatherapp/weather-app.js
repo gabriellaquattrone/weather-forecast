@@ -10,9 +10,6 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-function showImage() {
-
-}
 // Make the actual CORS request.
 function makeCorsRequest(url) {
 

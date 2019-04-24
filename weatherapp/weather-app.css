@@ -264,6 +264,9 @@ body {
         margin: 0;
         padding: 0;
     }
+    #pictureNode0{
+        width: 75%;
+    }
     .currentTemp{
         padding-top: 23%;
         padding-right: 80%;
@@ -272,6 +275,10 @@ body {
         border-right: solid 1px black;
         border-spacing: inherit;
         margin: 0%;
+        font-size: 1.5vh;
+    }
+    .dailyforecast{
+        height: 40vh;
     }
     .forecastfor{
         font-size: 100%;
@@ -282,7 +289,7 @@ body {
         padding-top: 25%;
     }
     .localweatherbackground{
-        height: 40vh;
+        height: 60vh;
 
     }
     .lefthalf{
