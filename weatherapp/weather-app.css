@@ -352,3 +352,104 @@ body {
         padding-left: 5%;
     }
 }
+@media screen and (max-width:480px) {
+   *{
+        margin: 0;
+        padding: 0;
+    }
+    #pictureNode0{
+        width: 75%;
+        padding-right: 10%;
+    }
+    .currentTemp{
+        padding-top: 12%;
+        padding-left: 6%;
+        height: 10vh;
+    }
+    .flexCol{
+        height: 20vh;
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+    }
+    .currentTime{
+        border-right: solid 1px black;
+        /* border-spacing: 0px; */
+        margin: 0%;
+        font-size: 4vh;
+    }
+    .dailyforecast{
+        height: 60vh;
+        width: 110vw;
+        justify-content: center;
+        display: none;
+    }
+    .forecastfor{
+        font-size: 100%;
+        text-align: center;
+        position: fixed;
+    }
+
+    .localweatherbackground{
+        height: 120vh;
+        width: 120vw;
+    }
+    .lefthalf{
+        padding-left: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+    .righthalf{
+        padding-top: 20%;
+        width: 60vw;
+    }
+    .lowerpart{
+        width: 75vw;
+    }
+    .northerncalifornia{
+        font-size: 115%;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+    .overlay{
+        display: none;
+    }
+    .picture{
+        padding-bottom: 16%;
+        width: 80vw;
+        position: fixed;
+        top: 40%;
+        left: 16%;
+    }
+    .searchTerm{
+        height: 1.6vh;
+        width: 35%;
+
+    }
+    .searchButton{
+        height: 2vh;
+        width: 8.5vw;
+        font-weight: 400;
+
+    }
+    .sixhourforecast{
+        font-size: 261%;
+        padding-bottom: 3%;
+        text-align: center;
+    }
+    .upperpart{
+        padding-top: 15%;
+        padding-left: 15%;
+        width: 80vw;
+    }
+    .image1{
+        margin: 0%;
+        width: 35vw;
+        height: 60vh;
+    }
+    .imglast{
+        margin: 0%;
+        height: 60vh;
+        padding-left: 5%;
+    }
+}
