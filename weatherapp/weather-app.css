@@ -161,16 +161,18 @@ body {
     text-align: center;
 }
 .lefthalf{
-    padding-left: 5%;
+        padding-left: 5%;
     padding-top: 3%;
-    width: 71vw;
+    width: 62vw;
     height: 90%;
-    /*height: 50%; */
+    /* height: 50%; */
 }
 .righthalf{
-    align-items: center;
+        align-items: center;
     width: 50%;
-    padding-top: 5%;
+    height: 36vh;
+    padding-top: 2%;
+    margin-right: 44px;
 }
 .overlay{
     position: relative;
