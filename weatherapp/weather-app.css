@@ -415,8 +415,9 @@ body {
         padding-right: 10%;
     }
     .currentTemp {
-        padding-top: 13%;
-        padding-left: 6%;
+        position: fixed;
+        top: 69%;
+        left: 59%;
         padding-right: 24%;
         height: 10vh;
     }
