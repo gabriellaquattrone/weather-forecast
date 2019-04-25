@@ -52,10 +52,9 @@ body {
 .flexCol{
     display: flex;
     flex-direction: column;
-    /*size: 138%;*/
     height: inherit;
     font-size: 10%;
-    width: 10%;
+    width: 17%;
     padding-top: 4%;
 }
 .sixhourforecast {
@@ -177,8 +176,8 @@ body {
 }
 .overlay {
     position: fixed;
-    top: 24px;
-    width: 415px;
+    top: 4px;
+    width: 389px;
     right: -4px;
 }
 .imgClip0{
@@ -212,9 +211,13 @@ body {
     display: inline-flex;
     flex-direction: row;
     padding-top: 35px;
+    padding-left: -2%;
     padding-bottom: 0%;
-    width: 58vw;
-    height: 34vh;
+    width: 80vw;
+    height: 33vh;
+    position: fixed;
+    bottom: -49px;
+    left: 37px;
 }
 .currentTime {
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -226,11 +229,13 @@ body {
 }
 .picture {
    width: 13vw;
-   height: inherit;
-   max-height: inherit;
-   padding-left: 4%;
-   padding-right: 4%;
-   padding-right: 6;
+    height: inherit;
+    max-height: inherit;
+    align-content: center;
+    /* position: fixed; */
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-right: 6;
 }
 .currentTemp {
     padding-bottom: 10%;
