@@ -19,11 +19,12 @@ body {
 #notFound{
     display: none;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 4vw;
+    font-size: 1vw;
     font-weight: normal;
     color: white;
     padding-right: 0%;
-    width: 60vw;
+    padding-top: .5vw;
+    width: 20vw;
 }
 .slideanimation{
     display: none;
@@ -418,6 +419,18 @@ body {
     #pictureNode0{
         width: 75%;
         padding-right: 10%;
+    }
+    #notFound {
+        display: none;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1vw;
+        font-weight: normal;
+        color: white;
+        padding-top: 4.5vw;
+        width: 100vw;
+        position: fixed;
+        left: 40vw;
+        top: 35vh;
     }
     .slideanimation{
         display: inline;

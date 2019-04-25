@@ -23,6 +23,8 @@ function makeCorsRequest(url) {
 
   // Load some functions into response handlers.
   xhr.onload = function() {
+      // console.log(JSON.parse(responseStr));
+      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
       let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
       let latSac = 38.5816;
@@ -33,34 +35,32 @@ function makeCorsRequest(url) {
       console.log("Longitude: " + lon);
       let distance = getDistance(latSac, lonSac, lat, lon);
       if (distance > 150){
+          document.getElementById("notFound").style.display = "inline";
           document.getElementById("notFound").textContent = "Not Found";
           console.log("Not Found");
       }
-      // console.log(JSON.parse(responseStr));
-      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
-
-      for (let a = 0; a < 6; a++){
-          // console.log(object.list[a].weather[0]);
-          updateHourlyForecast(object.list[a].weather[0].icon, a);
-          // console.log(object.list[a].weather[0].icon);
-          let time = grabTimes(object.list[a].dt_txt);
-          document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
-          if (a === 0){
-              //fix this for cases like 7 pm and 10 pm (two versus one)
-               let clockTime = `${time[0]}${time[1]}`;
-               if (time[1]===":"){
-                   document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase(); // 7:00pm
-               }
-               else {
-                    document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
-               }
-          }
-          else {
-              document.getElementById("hour" + a).textContent = time;
+      else {
+          for (let a = 0; a < 6; a++){
+              // console.log(object.list[a].weather[0]);
+              updateHourlyForecast(object.list[a].weather[0].icon, a);
+              // console.log(object.list[a].weather[0].icon);
+              let time = grabTimes(object.list[a].dt_txt);
+              document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
+              if (a === 0){
+                  //fix this for cases like 7 pm and 10 pm (two versus one)
+                   let clockTime = `${time[0]}${time[1]}`;
+                   if (time[1]===":"){
+                       document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase(); // 7:00pm
+                   }
+                   else {
+                        document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
+                   }
+              }
+              else {
+                  document.getElementById("hour" + a).textContent = time;
+              }
           }
       }
-
-
   };
 function getDistance(latSac,lonSac,lat,lon) { // https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
       let R = 6371; // Radius of the earth in km
