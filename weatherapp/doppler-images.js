@@ -32,12 +32,12 @@ function tryToGetImage(dateObj) {
 
     // When all goes well
 	newImage.onload = function() {
-        console.log("got image "+filename);
+        // console.log("got image "+filename);
 		addToArray(newImage);
 	}
     // If there is a problem
 	newImage.onerror = function() {
-		console.log("failed to load "+filename);
+		// console.log("failed to load "+filename);
 	}
     newImage.src = "http://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
 }

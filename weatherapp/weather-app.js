@@ -23,34 +23,63 @@ function makeCorsRequest(url) {
 
   // Load some functions into response handlers.
   xhr.onload = function() {
+      // console.log(JSON.parse(responseStr));
+      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
       let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
-      console.log(JSON.parse(responseStr));
-      //console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
-
-      for (let a = 0; a < 6; a++){
-          // console.log(object.list[a].weather[0]);
-          updateHourlyForecast(object.list[a].weather[0].icon, a);
-          // console.log(object.list[a].weather[0].icon);
-          let time = grabTimes(object.list[a].dt_txt);
-          document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
-          if (a === 0){
-              //fix this for cases like 7 pm and 10 pm (two versus one)
-               let clockTime = `${time[0]}${time[1]}`;
-               if (time[1]===":"){
-                   document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase(); // 7:00pm
-               }
-               else {
-                    document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
-               }
-          }
-          else {
-              document.getElementById("hour" + a).textContent = time;
+      let latSac = 38.5816;
+      let lonSac = -121.4944;
+      let lat = object["city"]["coord"].lat;
+      console.log("Latitude: " + lat);
+      let lon = object["city"]["coord"].lon;
+      console.log("Longitude: " + lon);
+      let distance = getDistance(latSac, lonSac, lat, lon);
+      if (distance > 150){
+          document.getElementById("notFound").style.display = "inline";
+          document.getElementById("notFound").textContent = "Not Found";
+          console.log("Not Found");
+      }
+      else {
+          for (let a = 0; a < 6; a++){
+              // console.log(object.list[a].weather[0]);
+              updateHourlyForecast(object.list[a].weather[0].icon, a);
+              // console.log(object.list[a].weather[0].icon);
+              let time = grabTimes(object.list[a].dt_txt);
+              document.getElementById("temp" + a).textContent = Math.round(Number(object.list[a].main.temp)) + "°";
+              if (a === 0){
+                  //fix this for cases like 7 pm and 10 pm (two versus one)
+                   let clockTime = `${time[0]}${time[1]}`;
+                   if (time[1]===":"){
+                       document.getElementById("hour" + a).textContent = `${time[0]}${time[5]}${time[6]}`.toUpperCase(); // 7:00pm
+                   }
+                   else {
+                        document.getElementById("hour" + a).textContent = `${time[0]}${time[1]}${time[6]}${time[7]}`.toUpperCase();
+                   }
+              }
+              else {
+                  document.getElementById("hour" + a).textContent = time;
+              }
           }
       }
-
-
   };
+function getDistance(latSac,lonSac,lat,lon) { // https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+      let R = 6371; // Radius of the earth in km
+      let dLat = deg2rad(lat-latSac);  // deg2rad below
+      let dLon = deg2rad(lon-lonSac);
+      let a =
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(deg2rad(lat)) * Math.cos(deg2rad(latSac)) *
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+        ;
+      let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      let d = R * c; // Distance in km
+      let converter = d * 0.621371;
+      return converter;
+}
+
+function deg2rad(deg) {
+    return deg * (Math.PI/180)
+}
   function grabTimes(timeObj){
           // Time Example : 2019-04-17 01:00:00
 
@@ -150,3 +179,11 @@ function whenClicked(){
     makeCorsRequest(url);
 }
 whenClicked();
+
+function slideup(){
+    let goUp = document.getElementById("slideup");
+
+}
+function slidedown(){
+    let goDown = document.getElementById("slidedown");
+}

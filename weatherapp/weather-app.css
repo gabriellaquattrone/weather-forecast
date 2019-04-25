@@ -16,6 +16,16 @@ body {
     overflow-x: hidden;
      overflow-y: hidden;
 }
+#notFound{
+    display: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1vw;
+    font-weight: normal;
+    color: white;
+    padding-right: 0%;
+    padding-top: .5vw;
+    width: 20vw;
+}
 .slideanimation{
     display: none;
 }
@@ -388,6 +398,22 @@ body {
 
 /* Mobile */
 @media screen and (max-width:480px) {
+    @keyframes slide_up {
+        from{top: 100vh;}
+            to{top:0;}
+
+    }
+    @keyframes slide_down {
+        from{top: 0vh;}
+            to{top:100vh;}
+
+    }
+    .animateup {
+
+    }
+    .animatedown {
+
+    }
    *{
         margin: 0;
         padding: 0;
@@ -405,22 +431,34 @@ body {
         width: 75%;
         padding-right: 10%;
     }
+    #notFound {
+        display: none;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1vw;
+        font-weight: normal;
+        color: white;
+        padding-top: 4.5vw;
+        width: 100vw;
+        position: fixed;
+        left: 40vw;
+        top: 35vh;
+    }
     .slideanimation{
         display: inline;
     }
     .currentTemp {
         position: fixed;
-        top: 61%;
-        left: 55%;
-        padding-right: 24%;
+        top: 63vh;
+        left: 54vw;
+        padding-right: 0%;
         height: 10vh;
     }
     .flexCol {
         height: 24vh;
-        width: 33vw;
+        width: 38vw;
         display: flex;
         justify-content: center;
-        padding-left: 14%;
+        padding-left: 0%;
     }
     .currentTime{
         border-right: solid 1px black;
