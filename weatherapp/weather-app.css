@@ -16,6 +16,9 @@ body {
     overflow-x: hidden;
      overflow-y: hidden;
 }
+.slideanimation{
+    display: none;
+}
 .pick{
     width: 8vw;
     padding-top: 20%;
@@ -46,13 +49,13 @@ body {
     width: 10%;
     padding-top: 4%;
 }
-.sixhourforecast{
+.sixhourforecast {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 4vw;
     font-weight: normal;
     color: white;
     padding-right: 0%;
-    width: 69vw;
+    width: 60vw;
 }
 .time{
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -62,24 +65,15 @@ body {
     display: inline;
     vertical-align: center;
     align-items: center;
-    /* align-content: center; */
     text-align: center;
 }
 .image1{
-        /* padding-left: 5%; */
-        /* padding-right: 5%; */
-        /* background-color: white; */
-        /* line-height: 7vh; */
         height: 34vh;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        /* border-right: solid 2px lightgray; */
-        /* line-height: 11vh; */
         border-right: rgb(170,170,170) solid  2px;
         width: 20vw;
-        /* padding-left: 5.1%; */
-        /* padding-right: 5.1%; */
         align-items: middle;
         align-items: center;
         margin-top: 3vh;
@@ -87,17 +81,11 @@ body {
 
 
 .imglast{
-    /* padding-left: 5%; */
-    /* padding-right: 5%; */
-    /* line-height: 11vh; */
     display: flex;
     flex-direction: column;
     height: 34vh;
     justify-content: space-evenly;
     vertical-align: center;
-    /* line-height: 7vh; */
-    /* padding-left: 4.9%; */
-    /* padding-right: 4.9%; */
     align-items: center;
     width: 20vw;
     margin-top: 3vh;
@@ -113,16 +101,11 @@ body {
 }
 .submitforecast{
     width: 64vw;
-    /* display: inline-block; */
-    hieght: 10%;
-    /* height: 22%; */
     display: inline-flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
 }
 
 .submission{
-    /* float: right; */
     width: 46%;
 }
 
@@ -154,8 +137,6 @@ body {
     border: 19px;
     color: white;
     background-color: rgb(127,136,203);
-    /* display: inline-block; */
-    /* vertical-align: middle; */
     width: 5vw;
 }
 .forecastfor{
@@ -176,24 +157,20 @@ body {
     text-align: center;
 }
 .lefthalf{
-        padding-left: 5%;
+    padding-left: 5%;
     padding-top: 3%;
-    width: 62vw;
+    width: 50vw;
     height: 90%;
-    /* height: 50%; */
 }
 .righthalf{
-        align-items: center;
-    width: 50%;
-    height: 36vh;
     padding-top: 2%;
-    margin-right: 44px;
+    margin-right: 440px;
 }
-.overlay{
-    position: relative;
-    top: 0;
-    left: 0;
-
+.overlay {
+    position: fixed;
+    top: 24px;
+    width: 415px;
+    right: -4px;
 }
 .imgClip0{
     clip-path: circle(40%);
@@ -204,9 +181,9 @@ body {
     filter: grayscale(100%);
 }
 
-.changepic{
-    max-width: 91%;
-    max-height: 78%;
+.changepic {
+    max-width: 100px;
+    max-height: 100px;
 }
 .cities{
     clip-path: circle(40%);
@@ -222,21 +199,13 @@ body {
     z-index: 2;
     position: absolute;
 }
-.lowerpart{
+.lowerpart {
     display: inline-flex;
     flex-direction: row;
-    /* justify-content: space-around; */
-    /*align-items: middle;*/
-    /* align-content: center; */
-    /* align-self: center; */
-    padding-top: 3%;
-    padding-bottom: 5%;
-    width: 95vw;
-    height: 23vh;
-    /* vertical-align: middle; */
-    /*padding-top: 2%;
-    width: 50vw;
-    height: 30vh; */
+    padding-top: 35px;
+    padding-bottom: 0%;
+    width: 58vw;
+    height: 34vh;
 }
 .currentTime {
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -391,7 +360,6 @@ body {
     .imglast{
         margin: 0%;
         height: 34vh;
-        /* padding-left: 5%; */
         width: 20vw;
     }
 
@@ -402,7 +370,7 @@ body {
 }
 
 
-
+/* Mobile */
 @media screen and (max-width:480px) {
    *{
         margin: 0;
@@ -411,9 +379,16 @@ body {
     h1{
         margin: 0;
     }
+    #slideup{
+        color: white;
+        background-color: transparent;
+    }
     #pictureNode0{
         width: 75%;
         padding-right: 10%;
+    }
+    .slideanimation{
+        display: inline;
     }
     .currentTemp {
         position: fixed;
