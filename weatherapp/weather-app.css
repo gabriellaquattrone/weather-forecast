@@ -424,17 +424,17 @@ body {
     }
     .currentTemp {
         position: fixed;
-        top: 61%;
-        left: 55%;
-        padding-right: 24%;
+        top: 63vh;
+        left: 54vw;
+        padding-right: 0%;
         height: 10vh;
     }
     .flexCol {
         height: 24vh;
-        width: 33vw;
+        width: 38vw;
         display: flex;
         justify-content: center;
-        padding-left: 14%;
+        padding-left: 0%;
     }
     .currentTime{
         border-right: solid 1px black;
