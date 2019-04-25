@@ -20,6 +20,9 @@ body {
     width: 8vw;
     padding-top: 20%;
 }
+.sixhourforecastmobile{
+    display: none;
+}
 .localweatherbackground{
     background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
     height: 60vh;
@@ -244,33 +247,14 @@ body {
     text-align: center;
 }
 .picture {
-   /* padding-top: 3%; */
-   /* padding-left: 8%; */
-   /* padding-right: 1%; */
-   /* width: 16%; */
-   /* padding-bottom: 0%; */
    width: 13vw;
    height: inherit;
    max-height: inherit;
-   /* float: left; */
-   /*vertical-align: center; */
-   /* align-content: center; */
-   /* align-items: center; */
    padding-left: 4%;
    padding-right: 4%;
    padding-right: 6;
-   /*padding-right: 1%;
-   width: 50%;
-   padding-bottom: 0%;
-   height: 25%;
-   */
 }
 .currentTemp {
-    /*font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 16vh;
-    font-weight: lighter;
-    color: white;
-    padding-left: 5%; */
     padding-bottom: 10%;
     font-family: 'Saira Extra Condensed', sans-serif;
     font-size: 10vh;
@@ -417,34 +401,36 @@ body {
 }
 
 
-  
-
 
 @media screen and (max-width:480px) {
    *{
         margin: 0;
         padding: 0;
     }
+    h1{
+        margin: 0;
+    }
     #pictureNode0{
         width: 75%;
         padding-right: 10%;
     }
-    .currentTemp{
-        padding-top: 12%;
+    .currentTemp {
+        padding-top: 13%;
         padding-left: 6%;
+        padding-right: 24%;
         height: 10vh;
     }
-    .flexCol{
-        height: 20vh;
-        width: 60vw;
+    .flexCol {
+        height: 43vh;
+        width: 38vw;
         display: flex;
         justify-content: center;
+        padding-left: 14%;
     }
     .currentTime{
         border-right: solid 1px black;
-        /* border-spacing: 0px; */
         margin: 0%;
-        font-size: 4vh;
+        font-size: 6vh;
     }
     .dailyforecast{
         height: 60vh;
@@ -452,63 +438,92 @@ body {
         justify-content: center;
         display: none;
     }
-    .forecastfor{
-        font-size: 100%;
+    .forecastfor {
+        font-size: 3vh;
         text-align: center;
-        position: fixed;
+        position: relative;
+        right: 4vw;
+        padding-right: 37%;
     }
-
     .localweatherbackground{
-        height: 120vh;
-        width: 120vw;
+        height: 100vh;
+        width: 100vw;
     }
     .lefthalf{
-        padding-left: 10%;
         display: flex;
+        padding: 0%;
         flex-direction: column;
+        width: 50vw;
+        height: 100vh;
     }
     .righthalf{
-        padding-top: 20%;
-        width: 60vw;
+        padding-top: 0%;
+        margin: 0%;
+        width: 50vw;
+        height: 100vh;
     }
-    .lowerpart{
-        width: 75vw;
-    }
+
     .northerncalifornia{
-        font-size: 115%;
+        width: 100vw;
+        font-size: 4vw;
         text-align: center;
         padding-bottom: 3%;
     }
     .overlay{
         display: none;
     }
-    .picture{
-        padding-bottom: 16%;
-        width: 80vw;
+    .picture {
+        padding-bottom: 0%;
+        width: 58vw;
         position: fixed;
-        top: 40%;
-        left: 16%;
+        top: 41%;
+        left: 25%;
+        padding-right: 0%;
     }
-    .searchTerm{
-        height: 1.6vh;
-        width: 35%;
-
+    .searchTerm {
+        height: 2.6vh;
+        width: 62vw;
     }
-    .searchButton{
-        height: 2vh;
-        width: 8.5vw;
+    .searchButton {
+        height: 3vh;
+        width: 12.5vw;
         font-weight: 400;
-
     }
     .sixhourforecast{
-        font-size: 261%;
+        display: none;
+    }
+    .sixhourforecastmobile {
+        color: white;
+        display: inline-block;
+        width: 100vw;
+        font-size: 5vh;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: normal;
+        margin-right: 0%;
+        padding-right: 0%;
         padding-bottom: 3%;
         text-align: center;
+        padding-top: 14%;
+    }
+    .submission {
+        width: 100vw;
+        padding-top: 5%;
+        display: inline-flex;
+        justify-content: center;
+    }
+    .submitforecast {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
     }
     .upperpart{
         padding-top: 15%;
-        padding-left: 15%;
         width: 80vw;
+        height: 50vh;
+    }
+    .lowerpart {
+        width: 100vw;
+        height: 50vh;
     }
     .image1{
         margin: 0%;
@@ -521,4 +536,3 @@ body {
         padding-left: 5%;
     }
 }
-
