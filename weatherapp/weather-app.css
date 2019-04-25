@@ -392,7 +392,7 @@ body {
         width: 20vw;
     }
 
-    
+
 }
 
 
@@ -426,6 +426,8 @@ body {
         background-color: transparent;
         border: none;
         font-size: 100px;
+        width: 20vw;
+        height: 16vh;
     }
     #pictureNode0{
         width: 75%;
@@ -445,9 +447,12 @@ body {
     }
     .slideanimation {
         display: inline;
+        position: fixed;
+        left: 37vw;
         height: 43vh;
-        padding-top: 40vh;
-        padding-left: 36vw;
+        width: 35vw;
+        padding-top: 28vh;
+        padding-left: 0vw;
     }
     .currentTemp {
         position: fixed;

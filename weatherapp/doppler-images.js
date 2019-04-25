@@ -55,7 +55,7 @@ function getTenImages() {
 function loadImg(){
     getTenImages();
     runDop();
-    setTimeout(print_src, 5000);
+    // setTimeout(print_src, 5000);
 }
 
 /* Cycles through images to create animation */

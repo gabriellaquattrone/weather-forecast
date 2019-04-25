@@ -189,9 +189,13 @@ let lower = document.getElementsByClassName("dailyforecast");
 
 function slideup(){
     upper.style.display = "none";
-    console.log("Clicked.");
+    lower.style.display = "inline";
+    window.alert("Clicked.");
+    console.log("Click!");
 }
 function slidedown(){
     lower.style.display = "none";
-    console.log("Clicked.");
+    upper.style.display = "inline";
+    window.alert("Clicked.");
+    console.log("Click!");
 }
