@@ -250,13 +250,18 @@ body {
         min-width: 100vw;
     }
     #pictureNode0{
-        width: 75%;
+        max-width: 22vw;
+        max-height: 17vh;
         padding-right: 10%;
+        padding-top: 17%;
+        /* padding-bottom: 1%; */
     }
     .currentTemp{
-        padding-top: 23%;
-        padding-left: 10%;
-    /* padding-right: 90%; */
+        /*padding-top: 0%; */
+        padding-left: 15%;
+        /* padding-right: 90%; */
+        height: 10vh;
+        font-size: 59px;
     }
     .currentTime{
         border-right: solid 1px black;
@@ -275,9 +280,11 @@ body {
         padding-top: 0.5vw;
     }
     .flexCol{
-        height: 20vh;
-        padding-top: 26%;
-        width: 18vw;
+        height: 9vh;
+        padding-top: 8%;
+        /* padding-right: 10%; */
+        /* padding-left: 10%; */
+        width: 94px;
     }
     .localweatherbackground{
         height: 60vh;
@@ -297,13 +304,16 @@ body {
         height: 58vh;
     }
     .lowerpart{ /* Tablet */
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
-        width: 33vw;
-        height: 27vw;
+        /* justify-content: space-between; */
+        width: 177px;
+        height: 12vw;
         position: fixed;
-        top: 63%;
-        left: 8%;
+        /*top: 60;*/
+        padding-top: 52px;
+        left: 13%;
+        top: 60%;
     }
     .northerncalifornia{
         font-size: 4vw;
@@ -314,27 +324,31 @@ body {
         margin-top: 1vh;
     }
     .overlay{ /* Tablet */
-        width: 38vw;
-        justify-content: center;
+            width: 300p;
+        /* justify-content: center; */
         position: fixed;
-        top: 35%;
-        left: 42%;
-
+        top: 39%;
+        left: 40%;
+        /* right: 110px; */
+        width: 235px;
     }
     .picture{
-        padding-bottom: 16%;
-        width: 29vw;
+        /* padding-bottom: 16%; */
+        width: 98px;
+        max-height: 19vh;
         top: 42%;
-        left: 8%;
+        left: 18%;
+        padding-right: 0;
+        padding-left: 0;
         position: fixed;
     }
 
     .searchTerm{
-        height: 1.6vh;
+        height: 2.6vh;
         width: 24vw;
     }
     .searchButton{
-        height: 2vh;
+        height: 3vh;
         width: 8.5vw;
         font-weight: 400;
 
@@ -352,7 +366,7 @@ body {
 
     }
     .upperpart{
-        padding-top: 5%;
+        padding-top: 1%;
         margin: 0;
         /* padding-left: 25%; */
         width: 112vw;
@@ -368,10 +382,7 @@ body {
         width: 20vw;
     }
 
-    #pictureNode0 {
-    width: 75%;
-    padding-right: 10%;
-}
+    
 }
 
 
