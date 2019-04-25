@@ -1,6 +1,0 @@
-function slideup(){
-
-}
-function slidedown(){
-    
-}
