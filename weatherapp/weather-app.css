@@ -384,9 +384,11 @@ body {
     h1{
         margin: 0;
     }
-    #slideup{
+    #slideup {
         color: white;
         background-color: transparent;
+        border: none;
+        font-size: 100px;
     }
     #pictureNode0{
         width: 75%;
@@ -397,14 +399,14 @@ body {
     }
     .currentTemp {
         position: fixed;
-        top: 69%;
-        left: 59%;
+        top: 61%;
+        left: 55%;
         padding-right: 24%;
         height: 10vh;
     }
     .flexCol {
-        height: 43vh;
-        width: 38vw;
+        height: 24vh;
+        width: 33vw;
         display: flex;
         justify-content: center;
         padding-left: 14%;
@@ -431,20 +433,20 @@ body {
         height: 100vh;
         width: 100vw;
     }
-    .lefthalf{
+    .lefthalf {
         display: flex;
         padding: 0%;
         flex-direction: column;
-        width: 50vw;
+        width: 36vw;
         height: 100vh;
     }
-    .righthalf{
-        padding-top: 0%;
+    /* Mobile */
+    .righthalf {
+        padding-top: 84vh;
         margin: 0%;
         width: 50vw;
         height: 100vh;
     }
-
     .northerncalifornia{
         width: 100vw;
         font-size: 4vw;
@@ -458,9 +460,11 @@ body {
         padding-bottom: 0%;
         width: 58vw;
         position: fixed;
-        top: 41%;
-        left: 25%;
+        top: 45%;
+        left: 35%;
+        height: 100px;
         padding-right: 0%;
+        padding-left: 0%;
     }
     .searchTerm {
         height: 2.6vh;
