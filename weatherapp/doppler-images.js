@@ -13,7 +13,7 @@ function addToArray(newImage) {
 		imageArray.push(newImage);
 		count = count+1;
 		if (count >= 10) {
-			console.log("Got 10 doppler images");
+			// console.log("Got 10 doppler images");
 		}
 	}
 }
@@ -60,7 +60,7 @@ function loadImg(){
 
 /* Cycles through images to create animation */
 function runDop(){
-    console.log(imageArray); // for debugging
+    // console.log(imageArray); // for debugging
     let i = 0;
     // loop through array
     let dopInterval = setInterval(function(){

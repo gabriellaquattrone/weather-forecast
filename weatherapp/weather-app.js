@@ -30,9 +30,9 @@ function makeCorsRequest(url) {
       let latSac = 38.5816;
       let lonSac = -121.4944;
       let lat = object["city"]["coord"].lat;
-      console.log("Latitude: " + lat);
+      // console.log("Latitude: " + lat);
       let lon = object["city"]["coord"].lon;
-      console.log("Longitude: " + lon);
+      // console.log("Longitude: " + lon);
       let distance = getDistance(latSac, lonSac, lat, lon);
       if (distance > 150){
           document.getElementById("notFound").style.display = "inline";
@@ -40,6 +40,8 @@ function makeCorsRequest(url) {
           console.log("Not Found");
       }
       else {
+          document.getElementById("notFound").style.display = "none";
+          document.getElementById("notFound").textContent = "";
           for (let a = 0; a < 6; a++){
               // console.log(object.list[a].weather[0]);
               updateHourlyForecast(object.list[a].weather[0].icon, a);
@@ -84,11 +86,11 @@ function deg2rad(deg) {
           // Time Example : 2019-04-17 01:00:00
 
          let date = new Date(timeObj + " UTC");
-         console.log(date);
+         // console.log(date);
 
          currentDate = date.toString();
          currentTime = Number(`${currentDate[16]}${currentDate[17]}`);
-         console.log("Current Time: ", currentTime);
+         // console.log("Current Time: ", currentTime);
 
          if (currentTime === 0) {
              return "12:00 am";
@@ -180,10 +182,16 @@ function whenClicked(){
 }
 whenClicked();
 
-function slideup(){
-    let goUp = document.getElementById("slideup");
+let goUp = document.getElementById("slideup");
+let goDown = document.getElementById("slidedown");
+let upper = document.getElementsByClassName("localweatherbackground");
+let lower = document.getElementsByClassName("dailyforecast");
 
+function slideup(){
+    upper.style.display = "none";
+    console.log("Clicked.");
 }
 function slidedown(){
-    let goDown = document.getElementById("slidedown");
+    lower.style.display = "none";
+    console.log("Clicked.");
 }

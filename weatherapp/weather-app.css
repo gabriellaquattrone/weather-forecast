@@ -432,8 +432,11 @@ body {
         left: 40vw;
         top: 35vh;
     }
-    .slideanimation{
+    .slideanimation {
         display: inline;
+        height: 43vh;
+        padding-top: 40vh;
+        padding-left: 36vw;
     }
     .currentTemp {
         position: fixed;
@@ -475,7 +478,7 @@ body {
         display: flex;
         padding: 0%;
         flex-direction: column;
-        width: 36vw;
+        width: 90vw;
         height: 100vh;
     }
     /* Mobile */
@@ -498,7 +501,7 @@ body {
         padding-bottom: 0%;
         width: 58vw;
         position: fixed;
-        top: 45%;
+        top: 49%;
         left: 35%;
         height: 100px;
         padding-right: 0%;
@@ -510,7 +513,7 @@ body {
     }
     .searchButton {
         height: 3vh;
-        width: 12.5vw;
+        width: 14.5vw;
         font-weight: 400;
     }
     .sixhourforecast{
@@ -540,9 +543,9 @@ body {
         flex-direction: column;
         width: 100vw;
     }
-    .upperpart{
+    .upperpart {
         padding-top: 15%;
-        width: 80vw;
+        width: 100vw;
         height: 50vh;
     }
     .lowerpart {

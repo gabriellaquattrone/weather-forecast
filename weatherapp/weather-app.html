@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel="stylesheet">
 </head>
 <body>
-    <div class= "localweatherbackground">
+    <div class="localweatherbackground">
         <div class="lefthalf">
             <div class="upperpart">
                 <h1 class= "sixhourforecast">Local Weather Six Hour Forecast</h1>
                 <h1 class= "sixhourforecastmobile">Local Weather <br> Six Hour Forecast</h1>
                 <h2 class="northerncalifornia">Northern California with doppler radar</h2>
                 <div class="submitforecast">
-                        <div class="forecastfor">Forecast for </div>    
+                        <div class="forecastfor">Forecast for </div>
                         <div class="submission">
                             <input type="text" class="searchTerm" id="myInput" placeholder="Davis,CA">
                             <button type="submit" class="searchButton" onclick="whenClicked()">submit</button>
@@ -38,15 +38,15 @@
                 <div class="currentTemp" id="temp0">67°</div>
 
             </div>
+            <div class="slideanimation">
+                <button onclick="slideup()" id="slideup"> &#8963; </button>
+            </div>
         </div>
         <div class="righthalf">
             <div class="overlay">
                 <img class="imgClip0" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" alt=""/>
                 <img class="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" alt=""/>
                 <img class="radar" id="radar" src="https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" alt=""/>
-            </div>
-            <div class="slideanimation">
-                <button onclick="slideup()" id="slideup"> &#8963; </button>
             </div>
         </div>
 
