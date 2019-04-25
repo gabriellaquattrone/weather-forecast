@@ -264,6 +264,7 @@ body {
     height: inherit;
     padding-top: 4%;
 }
+/* Tablet */
 @media screen and (min-width:480px) and (max-width:780px) {
     *{
         margin: 0;
@@ -321,8 +322,8 @@ body {
         width: 50vw;
         height: 58vh;
     }
-    .lowerpart{
-            display: flex;
+    .lowerpart{ /* Tablet */
+        display: flex;
         flex-direction: row;
         width: 33vw;
         height: 27vw;
@@ -338,11 +339,11 @@ body {
         width: 100vw;
         margin-top: 1vh;
     }
-    .overlay{
-        width: 42vw;
+    .overlay{ /* Tablet */
+        width: 38vw;
         justify-content: center;
         position: fixed;
-        top: 39%;
+        top: 35%;
         left: 42%;
 
     }
