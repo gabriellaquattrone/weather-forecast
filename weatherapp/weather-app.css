@@ -27,6 +27,9 @@ body {
     /* padding-bottom: 27vh; */
     width: 37vw;
     /* height: 200vh; */
+    left: 17vw;
+    position: fixed;
+    top: 38vh;
 }
 .slideanimation{
     display: none;
@@ -257,6 +260,11 @@ body {
         margin: 0;
         padding: 0;
     }
+    #notFound{
+        position: fixed;
+        top: 26vh;
+        left: 33vw;
+    }
 
     body{
         min-height: 100vh;
@@ -475,12 +483,12 @@ body {
     #notFound {
         display: none;
         font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 1vw;
+        font-size: 6vw;
         font-weight: normal;
         color: white;
         width: 100vw;
         position: fixed;
-        left: 40vw;
+        left: 35vw;
         top: 45vh;
     }
     .slideanimation {
