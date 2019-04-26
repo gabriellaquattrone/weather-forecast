@@ -191,22 +191,16 @@ function whenClicked(){
 }
 whenClicked();
 
-// let up = document.getElementsByClassName("dailyforecast");
-// let down = document.getElementsByClassName("localweatherbackground");
+let bool = false;
 let initial_class = document.getElementById("bottom");
-function slideup(){
-    // up.style.display = "none"; this didn't work, unfortunately
-    // down.style.display = "inline";
-    initial_class.classList.add("up");
-    initial_class.classList.remove("down");
-
-    // lower.style.display = "inline";    // console.log("Click!");
-}
-function slidedown(){
-    // window.alert("clicked");
-    // up.style.display = "inline";
-    // down.style.display = "none";
-    initial_class.classList.add("down");
-    initial_class.classList.remove("up");
-
+function slide(){
+    if (bool === false){
+        initial_class.classList.add("up");
+        initial_class.classList.remove("down");
+        bool = true;
+    }else{
+        initial_class.classList.add("down");
+        initial_class.classList.remove("up");
+        bool = false;
+    }
 }
