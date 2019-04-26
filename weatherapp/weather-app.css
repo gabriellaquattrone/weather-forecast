@@ -453,8 +453,8 @@ body {
     #slidedown {
         background-color: transparent;
         width: 23vw;
-        height: 18vh;
-        font-size: 32vw;
+        height: 10vh;
+        font-size: 23vw;
         color: rgb(46, 49, 146);
         border: none;
     }
@@ -608,7 +608,7 @@ body {
         height: 50vh;
     }
     .image1 {
-        height: 34vh;
+        height: 18vh;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
