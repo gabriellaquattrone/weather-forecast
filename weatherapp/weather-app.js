@@ -182,20 +182,38 @@ function whenClicked(){
 }
 whenClicked();
 
-let goUp = document.getElementById("slideup");
-let goDown = document.getElementById("slidedown");
-let upper = document.getElementsByClassName("localweatherbackground");
-let lower = document.getElementsByClassName("dailyforecast");
+// let goUp = document.getElementById("slideup");
+// let goDown = document.getElementById("slidedown");
+// let upper = document.getElementsByClassName("localweatherbackground");
+// let lower = document.getElementsByClassName("dailyforecast");
 
+/*let up = false;
+function arrow(){
+    let container = document.getElementById("bottom");
+    if (up === true){
+
+    }
+    else {
+
+    }
+
+}*/
+// let up = document.getElementsByClassName("dailyforecast");
+// let down = document.getElementsByClassName("localweatherbackground");
+let initial_class = document.getElementById("bottom");
 function slideup(){
-    upper.style.display = "none";
-    lower.style.display = "inline";
-    window.alert("Clicked.");
-    console.log("Click!");
+    // up.style.display = "none";
+    // down.style.display = "inline";
+    initial_class.classList.add("animateup");
+    initial_class.classList.remove("animatedown");
+
+    // lower.style.display = "inline";    // console.log("Click!");
 }
 function slidedown(){
-    lower.style.display = "none";
-    upper.style.display = "inline";
-    window.alert("Clicked.");
-    console.log("Click!");
+    // window.alert("clicked");
+    // up.style.display = "inline";
+    // down.style.display = "none";
+    initial_class.classList.add("animateup");
+    initial_class.classList.remove("animatedown");
+
 }

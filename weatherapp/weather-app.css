@@ -398,6 +398,29 @@ body {
 
 /* Mobile */
 @media screen and (max-width:480px) {
+    body {
+        position: relative;
+    }
+
+    .animateup {
+        animation-name: slide_up;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        position: absolute;
+        max-height: 100vh;
+        overflow: hidden;
+        /* moves relative to the parent */
+
+    }
+    .animatedown {
+        animation-name: slide_down;
+        animation-duration: 1s;
+        animation-fill-mode: forwards; /* just means its going to stay there (but try backwards) */
+        position: absolute;
+        max-height: 0vh;
+        overflow: hidden;
+
+    }
     @keyframes slide_up {
         from{top: 100vh;}
             to{top:0;}
@@ -408,11 +431,9 @@ body {
             to{top:100vh;}
 
     }
-    .animateup {
-
-    }
-    .animatedown {
-
+    #bottom{
+        overflow: hidden;
+        transition: all 1s ease;
     }
    *{
         margin: 0;
@@ -426,8 +447,23 @@ body {
         background-color: transparent;
         border: none;
         font-size: 100px;
-        width: 20vw;
+        width: 19vw;
         height: 16vh;
+    }
+    #slidedown {
+        background-color: transparent;
+        width: 23vw;
+        height: 10vh;
+        font-size: 23vw;
+        color: rgb(46, 49, 146);
+        border: none;
+    }
+    .pick {
+        width: 40vw;
+        padding-top: 0%;
+    }
+    .slideanimationb {
+        height: 5vh;
     }
     #pictureNode0{
         width: 75%;
@@ -473,11 +509,14 @@ body {
         margin: 0%;
         font-size: 6vh;
     }
-    .dailyforecast{
-        height: 60vh;
-        width: 110vw;
+    .dailyforecast {
+        height: 120vh;
+        width: 100vw;
         justify-content: center;
-        display: none;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        /* display: none; */
     }
     .forecastfor {
         font-size: 3vh;
@@ -568,14 +607,23 @@ body {
         width: 100vw;
         height: 50vh;
     }
-    .image1{
-        margin: 0%;
-        width: 35vw;
-        height: 60vh;
+    .image1 {
+        height: 18vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-bottom: rgb(170,170,170) solid 2px;
+        width: 100vw;
+        margin-top: 0vh;
     }
-    .imglast{
-        margin: 0%;
-        height: 60vh;
-        padding-left: 5%;
+    .imglast {
+        display: flex;
+        flex-direction: row;
+        height: 15vh;
+        justify-content: space-evenly;
+        vertical-align: center;
+        align-items: center;
+        width: 100vw;
+        margin-top: 0vh;
     }
 }
