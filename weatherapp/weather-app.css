@@ -16,15 +16,17 @@ body {
     overflow-x: hidden;
      overflow-y: hidden;
 }
-#notFound{
+#notFound {
     display: none;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 1vw;
+    font-size: 3vw;
     font-weight: normal;
     color: white;
     padding-right: 0%;
-    padding-top: .5vw;
-    width: 20vw;
+    padding-top: 0vw;
+    /* padding-bottom: 27vh; */
+    width: 37vw;
+    /* height: 200vh; */
 }
 .slideanimation{
     display: none;
@@ -343,11 +345,11 @@ body {
         /* right: 110px; */
         width: 235px;
     }
-    .picture{
+    .picture {
         /* padding-bottom: 16%; */
         width: 98px;
         max-height: 19vh;
-        top: 42%;
+        top: 38%;
         left: 18%;
         padding-right: 0;
         padding-left: 0;
@@ -460,7 +462,7 @@ body {
         border: none;
     }
     .pick {
-        width: 25vw;
+        width: 20vw;
         padding-top: 0%;
     }
     .slideanimationb {
@@ -476,11 +478,10 @@ body {
         font-size: 1vw;
         font-weight: normal;
         color: white;
-        padding-top: 4.5vw;
         width: 100vw;
         position: fixed;
         left: 40vw;
-        top: 35vh;
+        top: 45vh;
     }
     .slideanimation {
         display: inline;
@@ -574,7 +575,7 @@ body {
         padding-bottom: 0%;
         width: 58vw;
         position: fixed;
-        top: 49%;
+        top: 43%;
         left: 35%;
         height: 100px;
         padding-right: 0%;

@@ -48,7 +48,8 @@ function makeCorsRequest(url) {
       else {
           document.getElementById("notFound").style.display = "none";
           document.getElementById("notFound").textContent = "";
-           document.getElementById("current").style.display = "inline";
+          document.getElementById("current").style.display = "inline";
+
           for (let a = 0; a < 6; a++){
               // console.log(object.list[a].weather[0]);
               updateHourlyForecast(object.list[a].weather[0].icon, a);
