@@ -19,16 +19,15 @@
                 <div class="submitforecast">
                         <div class="forecastfor">Forecast for </div>
                         <div class="submission">
-                            <input type="text" class="searchTerm" id="myInput" placeholder="Davis,CA">
+                            <input type="text" class="searchTerm" id="myInput"  placeholder="Davis,CA">
                             <button type="submit" class="searchButton" onclick="whenClicked()">submit</button>
                         </div>
-                        <p id="notFound"></p>
                 </div>
             </div>
             <div class="lowerpart">
 
                 <div class="flexCol">
-                    <h1 class="currentTime"> current <br> </h1>
+                    <h1 class="currentTime" id="current"> current <br> </h1>
                     <h2 class="currentTime" id="hour0">12PM</h2>
                 </div>
 
@@ -36,6 +35,7 @@
                 </div>
 
                 <div class="currentTemp" id="temp0">67°</div>
+                <div id="notFound"></div>
                 <div class="slideanimation">
                     <button id="slideup" onclick="slideup()"> &#8963; </button>
                 </div>

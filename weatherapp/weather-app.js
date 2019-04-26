@@ -37,11 +37,18 @@ function makeCorsRequest(url) {
       if (distance > 150){
           document.getElementById("notFound").style.display = "inline";
           document.getElementById("notFound").textContent = "Not Found";
+          document.getElementById("current").style.display = "none";
           console.log("Not Found");
+          for (let a = 0; a < 6; a++){
+              document.getElementById("temp" + a).textContent = "";
+              document.getElementById("hour" + a).textContent = "";
+              document.getElementById("pick" + a).style.display = "none";
+          }
       }
       else {
           document.getElementById("notFound").style.display = "none";
           document.getElementById("notFound").textContent = "";
+           document.getElementById("current").style.display = "inline";
           for (let a = 0; a < 6; a++){
               // console.log(object.list[a].weather[0]);
               updateHourlyForecast(object.list[a].weather[0].icon, a);
@@ -109,6 +116,7 @@ function deg2rad(deg) {
   function updateHourlyForecast(weatherObj, a){
       let pickVariable = "pick" + a;
       let x = document.getElementById("pictureNode" + a);
+      document.getElementById("pick" + a).style.display = "inline";
       if (weatherObj === "01d") {
           // console.log('Grabbed a clearsky.');
           x.setAttribute("src", "assets/clearsky.svg");
@@ -182,30 +190,14 @@ function whenClicked(){
 }
 whenClicked();
 
-// let goUp = document.getElementById("slideup");
-// let goDown = document.getElementById("slidedown");
-// let upper = document.getElementsByClassName("localweatherbackground");
-// let lower = document.getElementsByClassName("dailyforecast");
-
-/*let up = false;
-function arrow(){
-    let container = document.getElementById("bottom");
-    if (up === true){
-
-    }
-    else {
-
-    }
-
-}*/
 // let up = document.getElementsByClassName("dailyforecast");
 // let down = document.getElementsByClassName("localweatherbackground");
 let initial_class = document.getElementById("bottom");
 function slideup(){
-    // up.style.display = "none";
+    // up.style.display = "none"; this didn't work, unfortunately
     // down.style.display = "inline";
-    initial_class.classList.add("animateup");
-    initial_class.classList.remove("animatedown");
+    initial_class.classList.add("up");
+    initial_class.classList.remove("down");
 
     // lower.style.display = "inline";    // console.log("Click!");
 }
@@ -213,7 +205,7 @@ function slidedown(){
     // window.alert("clicked");
     // up.style.display = "inline";
     // down.style.display = "none";
-    initial_class.classList.add("animateup");
-    initial_class.classList.remove("animatedown");
+    initial_class.classList.add("down");
+    initial_class.classList.remove("up");
 
 }
