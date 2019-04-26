@@ -560,7 +560,7 @@ body {
         width: 100vw;
     }
     .upperpart {
-        padding-top: 15%;
+        /* padding-top: 15%; */
         width: 100vw;
         height: 50vh;
     }
