@@ -412,39 +412,43 @@ body {
     body {
         position: relative;
     }
-
     .up {
-        animation-name: slide_up;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
         position: absolute;
         max-height: 100vh;
-        overflow: hidden;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-name: goup;
         /* moves relative to the parent */
 
     }
     .down {
-        animation-name: slide_down;
-        animation-duration: 1s;
-        animation-fill-mode: forwards; /* just means its going to stay there (but try backwards) */
         position: absolute;
-        max-height: 0vh;
-        overflow: hidden;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+        animation-name: godown;
 
     }
-    @keyframes slide_up {
-        from{top: 100vh;}
-            to{top:0;}
+    @keyframes goup {
+        from
+        {
+            top: 100vh;
+        }
+        to
+        {
+            top: 0vh;
+        }
 
     }
-    @keyframes slide_down {
-        from{top: 0vh;}
-            to{top:100vh;}
+    @keyframes godown {
+        from
+        {
+            top: 0vh;
+        }
+        to
+        {
+            top:100vh;
+        }
 
-    }
-    #bottom{
-        overflow: hidden;
-        transition: all 1s ease;
     }
    *{
         margin: 0;
