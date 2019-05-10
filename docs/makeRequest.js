@@ -12,7 +12,7 @@ function createCORSRequest(method, url) {
 // Make the actual CORS request.
 function makeCorsRequest() {
 
-  let url = "https://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=xxx"
+  let url = "https://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47"
 
   let xhr = createCORSRequest('GET', url);
 
@@ -24,7 +24,7 @@ function makeCorsRequest() {
 
   // Load some functions into response handlers.
   xhr.onload = function() {
-      let responseStr = xhr.responseText;  // get the JSON string 
+      let responseStr = xhr.responseText;  // get the JSON string
       let object = JSON.parse(responseStr);  // turn it into an object
       console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
   };
@@ -37,5 +37,5 @@ function makeCorsRequest() {
   xhr.send();
 }
 
-// run this code to make request when this script file gets executed 
+// run this code to make request when this script file gets executed
 makeCorsRequest();
