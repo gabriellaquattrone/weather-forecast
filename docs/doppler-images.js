@@ -39,7 +39,7 @@ function tryToGetImage(dateObj) {
 	newImage.onerror = function() {
 		// console.log("failed to load "+filename);
 	}
-    newImage.src = "http://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
+    newImage.src = "https://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
 }
 
 function getTenImages() {
