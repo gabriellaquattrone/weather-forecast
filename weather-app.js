@@ -12,7 +12,7 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 function makeCorsRequest(url) {
-
+    
   let xhr = createCORSRequest('GET', url);
 
   // checking if browser does CORS
