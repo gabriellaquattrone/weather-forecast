@@ -12,7 +12,7 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 function makeCorsRequest(url) {
-    
+
   let xhr = createCORSRequest('GET', url);
 
   // checking if browser does CORS
@@ -181,10 +181,10 @@ function whenClicked(){
     input = document.getElementById('myInput'); // ${input.value} put in the URL for searching
     let url = "";
     if (input.value) {
-        url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=${input.value},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+        url = `https://api.openweathermap.org/data/2.5/forecast/hourly?q=${input.value},US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
     }
     else {
-        url = `http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
+        url = `https://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=08f0496b9bf5f4ed7972e757f3df0b47`
     }
     // run this code to make request when this script file gets executed
     makeCorsRequest(url);
